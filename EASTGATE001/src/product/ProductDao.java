@@ -16,7 +16,7 @@ public class ProductDao {
 		return instance;
 	}
 	// DataBase Connection Pool
-	private Connection getConnection() {
+	private Connection getConnection() { 
 		Connection conn = null;
 		try {
 			Context ctx = new InitialContext();

@@ -22,7 +22,7 @@ public class ProductService { // 수정 필요
 		String description = mr.getParameter("description");
 		File file = new File(real+"/"+fileName);
 		int fileSize = (int)file.length();
-		// DB에 연동하기위해 dto값 세팅
+		// DB에 연동하기위해 dto값 세팅 
 		PdsItem pi = new PdsItem();
 		pi.setFileName(fileName);
 		pi.setFileSize(fileSize);

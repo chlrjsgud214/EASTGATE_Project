@@ -7,7 +7,7 @@ public class Product {
 	private String pimage;// 썸네일 이미지
 	private String pcon;  // 제품 설명
 	
-	public String getPname() {
+	public String getPname() { 
 		return pname;
 	}
 	public void setPname(String pname) {
