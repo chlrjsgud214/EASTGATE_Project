@@ -65,3 +65,9 @@ CREATE TABLE orders (
 	oprice number(10)   NULL,
 	odate varchar2(12) NULL  
 );
+
+select * from tab;
+
+create sequence pdt_seq;
+
+select * from PRODUCT;
