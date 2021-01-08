@@ -4,6 +4,7 @@
 <configuration>
 	<properties resource="db.properties" />
 	<typeAliases>
+		<typeAlias alias="admin" type="admin.Admin" />
 		<typeAlias alias="member" type="member.Member" />
 	</typeAliases>
 	<environments default="development">
@@ -18,7 +19,7 @@
 		</environment>
 	</environments>
 	<mappers>
+		<mapper resource="Admin.xml" />
 		<mapper resource="member.xml" />
 	</mappers>
-
 </configuration>

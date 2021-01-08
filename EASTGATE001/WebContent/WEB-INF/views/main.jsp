@@ -219,8 +219,8 @@ address {float: left;padding: 40px;font-size: 14px;line-height: 1.3em;color: #66
 						</a>
 					</h1>
 					<ul class="util">
-						<li><a href="#">회원가입</a></li>
-						<li><a href="#">로그인</a></li>
+						<li><a href="joinForm.do">회원가입</a></li>
+						<li><a href="adminloginForm.do">로그인</a></li>
 						<li><a href="#">장바구니</a></li>
 					</ul>
 					<form action="" class="search_form">
