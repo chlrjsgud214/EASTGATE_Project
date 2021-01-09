@@ -1,12 +1,27 @@
 package product;
 
 public class Product {
-	private String pname; // 판매자 이름
-	private int price;    // 가격
-	private int pcount;   // 재고 수량
-	private String pimage;// 썸네일 이미지
-	private String pcon;  // 제품 설명
+	private String pcode;  // 제품 코드
+	private String scode;  // 판매자 코드
 	
+	private String pname;  // 판매자 이름 	writer
+	private int price;     // 가격			option
+	private int pcount;    // 재고 수량		product count
+	private String pimage; // 썸네일 이미지 fileimg
+	private String pcon;   // 제품 설명		contents
+	
+	public String getPcode() {
+		return pcode;
+	}
+	public void setPcode(String pcode) {
+		this.pcode = pcode;
+	}
+	public String getScode() {
+		return scode;
+	}
+	public void setScode(String scode) {
+		this.scode = scode;
+	}
 	public String getPname() { 
 		return pname;
 	}
