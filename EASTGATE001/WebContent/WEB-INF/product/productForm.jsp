@@ -5,7 +5,38 @@
 <head>
 <meta charset="UTF-8">
     <title>EAST-GATE 상품등록</title>   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+
+<!-- include summernote css/js-->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+
+<script>  // 게시판 에디터 
+    $(document).ready(function() {
+  $('#productnote').summernote({
+    placeholder: '등록할 제품의 설명을 넣어주세요.  EAST-GATE',
+        height: 500, // 크기
+        lang: 'ko-KR', //언어
+        toolbar: [
+                    // [groupName, [list of button]]
+                    ['Font Style', ['fontname']],
+                    ['style', ['bold', 'italic', 'underline']],
+                    ['font', ['strikethrough']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['paragraph']],
+                    ['height', ['height']],
+                    ['Insert', ['picture']],
+                    ['Insert', ['link']],
+                    ['Misc', ['fullscreen']]
+                 ]
+  });
+});
+</script>
+
     <style>
     input[type="file"] {
         display: block;
@@ -196,7 +227,7 @@ function CategoryValue(e) { // 카테고리 코드 보내기
             <th>가격</th><td><input type="text" name="price" required="required"></td>
         </tr>
         <tr>
-            <th>제품 설명</th> <td><textarea name="pcon" cols="30" rows="10"></textarea></td>
+            <th>제품 설명</th>  <td><div id="productnote" name="pcon"></div> </td>
         </tr>
         <tr><th colspan="2"><input type="submit" value="제품 등록"></th></tr>
     </table>
