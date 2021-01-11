@@ -8,6 +8,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/main.css">
 <script>
 	$(function() {
 		$('.gnb>li').hover(function() {
@@ -18,184 +19,7 @@
 
 	})//ready
 </script>
-<style>
-body {
-	font-size: 14px;color: #333;font-family: '맑은 고딕';
-}
 
-a {
-	text-decoration: none;color: inherit;
-}
-
-.container {
-	width: 1080px;margin: auto;
-}
-
-.container:after {
-	content: "";display: block;clear: both;
-}
-
-.blind {
-	width: 0;height: 0;overflow: hidden;padding: 0;margin: 0;display: none;
-}
-/* Header */
-header {
-	
-}
-
-.top_header {
-	padding: 20px 0;border-bottom: 2px solid #000000;
-}
-
-h1 {
-	float: left;
-}
-
-h1 a {
-	height: 100px;
-}
-
-.util {
-	float: right;margin-bottom: 45px;
-}
-
-.util li {
-	float: left;font-size: 12px;color: #666;
-}
-
-.util li:after {
-	content: "";display: inline-block;margin: 0 8px;width: 1px;
-	height: 8px;background: #AAA;
-}
-
-.util li:last-child:after {
-	display: none;
-}
-
-.search_form {
-	clear: right;float: right;border: 1px solid #000;
-}
-
-.search_form input {
-	vertical-align: middle;
-}
-
-.search_form .search_txt {
-	width: 220px;height: 30px;border: none;padding-left: 10px;
-}
-
-.gnb_wrap {
-	border-bottom: 2px solid #000000;
-}
-
-.gnb {
-	font-weight: bold;
-}
-
-.gnb a {
-	display: block;
-}
-
-.gnb>li {
-	position: relative;z-index: 999;
-}
-
-.gnb>li>a {
-	width: 210px;line-height: 40px;font-size: 16px;
-}
-
-.gnb>li>a:hover {
-	background: #f16e5a;color: #FFF;
-}
-.gnb ul {
-	font-size: 8px;
-    overflow: hidden;display: none;position: absolute;
-    background:#FFF; 
-}
-.gnb ul li {width: 180px;}
-.gnb>li>a {font-size: 16px;}
-.g1 {left: 220px;top: 10px;}
-.g2 {left: 220px;top: 130px;}
-.g3 {left: 220px;top: -30px;}
-.g4 {left: 220px;top: 100px;}
-.g5 {left: 220px;top: 200px;}
-.g6 {left: 220px;top: 260px;}
-.g7 {left: 220px;top: -70px;}
-.g8 {left: 220px;top: -110px;}
-.g9 {left: 220px;top: -150px;}
-.gnb ul li {
-	float: left;
-}
-
-.gnb ul li a {
-	padding: 13px 35px;
-}
-
-.gnb ul li a:hover {
-	
-}
-
-/* Main */
-main {
-	
-}
-
-.slider_wrap {
-	height: 360px;overflow: hidden;position: relative;margin-top: 25px;
-}
-
-h2 {
-	font-size: 24px;margin-bottom: 40px;margin-left: 30px;
-}
-
-.product1 {
-	margin-top: 50px;
-}
-
-.contents {
-	position: relative;padding-bottom: 300px;
-}
-
-.contents .box {
-	position: absolute;left: 0;right: 0;top: 0;
-}
-
-.contents .box li span {
-	text-align: center;
-}
-
-.box {
-	margin-left: 60px;
-}
-
-.box li {
-	float: left;padding-right: 40px;
-}
-
-.box li img {
-	width: 210px;height: 210px;
-}
-
-.box li:last-child {
-	padding-right: 0;
-}
-
-.txt_price {
-	color: #f16e5a;font-weight: bold;font-size: 18px;display: block;
-}
-
-.txt_name {
-	display: block;padding: 10px 0;
-}
-/* footer */
-footer {
-	height: 200px;background: #eee;
-}
-
-p {
-	line-height: 200px;
-}
-</style>
 </head>
 <body>
 	<div id="wrap">
@@ -404,10 +228,40 @@ p {
 			</div>
 		</main>
 		<footer>
+		<div class="footer_menu">
 			<div class="container">
+				<ul>
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보취급방침</a></li>
+					<li><a href="#">제휴문의</a></li>
+					<li><a href="#">Q&A</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">상품후기</a></li>
+					<li><a href="#">공지사항</a></li>
+				</ul>
+			</div> <!-- .container end -->
+		</div> <!-- .footer_menu end -->
+		<div class="corp_info">
+			<div class="container">
+				<img src="image/flogo.png" alt="EastGate">
+				<address>
+					서울 마포구 신촌로 176 중앙빌딩 501호 <br>
+					TEL : 02-1234-1234 / FAX : 02-123-4567 <br>사업자등록번호 : 123-45-67890
 				<p class="copyright">Copyright©.All rights reserved by EAST-GATE</p>
-			</div>
-		</footer>
+				</address>
+				<div class="bank_info">
+					<h2>무통장 계좌</h2>
+					<p>
+						<span class="txt_1">1234-56-789012-34</span><br>
+						<span class="txt_2">국민은행</span><br>
+						<span class="txt_3">예금주 : (주)이스트게이트</span>
+					</p>
+				</div>
+				</div> <!-- corp_info end -->
+			</div> <!-- .container end -->
+			
+		</footer> <!-- footer end -->
 	</div>
 </body>
 </html>
