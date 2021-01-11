@@ -21,7 +21,7 @@
 	</c:if>
 	<c:if test="${result == -1 }">
 		<script type="text/javascript">
-			alert("아이디가 있다는 데 왜 입력해, 꺼져");
+			alert("아이디 중복확인 해주세요");
 			history.go(-1);
 		</script>
 	</c:if>

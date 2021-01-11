@@ -8,7 +8,7 @@ public class MainAction implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		return "Amain";
+		return "main";
 	}
 
 }

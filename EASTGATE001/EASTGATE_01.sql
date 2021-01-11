@@ -71,3 +71,5 @@ select * from tab;
 create sequence pdt_seq;
 
 select * from PRODUCT;
+
+create sequence admin_mcode;

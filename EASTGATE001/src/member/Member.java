@@ -1,7 +1,5 @@
 package member;
 
-import java.util.Date;
-
 public class Member {
 	private String mcode;
 	private String scode;
@@ -11,7 +9,7 @@ public class Member {
 	private String resinum; 
 	private String tel;  
 	private String addr; 
-	private Date join;   
+	private String join;   
 	private String mdel;
 	
 	public String getMcode() {
@@ -62,10 +60,10 @@ public class Member {
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
-	public Date getJoin() {
+	public String getJoin() {
 		return join;
 	}
-	public void setJoin(Date join) {
+	public void setJoin(String join) {
 		this.join = join;
 	}
 	public String getMdel() {

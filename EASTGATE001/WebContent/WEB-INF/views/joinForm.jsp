@@ -31,7 +31,6 @@
 <body>
 
 <form action="joinAction.do" name="frm" onsubmit="return chk()" method="post">
-<input type="hidden" name="mcode" value="${mcode }">
 	<table>
 		<tr>
 			<th>아이디</th>
@@ -64,10 +63,6 @@
 			<th>주소</th>
 			<td><input type="text" name="addr" required="required" autocomplete="off"></td>
 		</tr>
-		<tr>
-			<th colspan="2"><label for="normal">일반회원</label><input type="radio" id="normal" name="scode" value="n" checked="checked">
-							<label for="seller">판매자</label><input type="radio" id="seller" name="scode" value="s"></th>
-			</tr>
 		<tr>
 			<th colspan="2"><input type="submit" value="가입"><input type="reset" value="취소"></th>
 		</tr>

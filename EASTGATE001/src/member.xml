@@ -6,12 +6,12 @@
 		select * from member where mid=#{mid}
 	</select>
 	<insert id="insert" parameterType="member">
-		insert into member values('mcode', #{scode}, #{mid}, #{mpass}, #{mname}, #{resinum}, #{tel}, #{addr}, sysdate, 'n')
+		insert into member values(admin_mcode.nextval, 'g', #{mid}, #{mpass}, #{mname}, #{resinum}, #{tel}, #{addr}, sysdate, 'n')
 	</insert>
-	<!-- <update id="update" parameterType="member">
-		update member set password=#{password}, name=#{name}, address=#{address}, tel=#{tel} where id=#{id} 
-	</update>
+	<update id="update" parameterType="member">
+		update member set mpass=#{mpass}, mname=#{mname}, address=#{address}, tel=#{tel} where mid=#{mid} 
+	</update> 
 	<update id="delete" parameterType="string">
-		update member set del='y' where id=#{id}
-	</update> -->
+		update member set mdel='y' where mid=#{mid}
+	</update> 
 </mapper>

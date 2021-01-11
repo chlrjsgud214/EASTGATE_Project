@@ -97,10 +97,8 @@ h1 a {
 }
 
 .gnb>li {
-	position: relative;
+	position: relative;z-index: 999;
 }
-
-
 
 .gnb>li>a {
 	width: 210px;line-height: 40px;font-size: 16px;
@@ -146,7 +144,7 @@ main {
 	height: 360px;overflow: hidden;position: relative;margin-top: 25px;
 }
 
-main h2 {
+h2 {
 	font-size: 24px;margin-bottom: 40px;margin-left: 30px;
 }
 
@@ -189,23 +187,14 @@ main h2 {
 .txt_name {
 	display: block;padding: 10px 0;
 }
-/* Footer */
-footer {}
-.footer_menu {border-top: 2px solid #CCC;border-bottom: 2px solid #CCC;}
-.footer_menu ul {}
-.footer_menu li {float: left;padding: 10px;font-size: 12px;color: #333;}
-.corp_info {background: #CCC;}
-.corp_info img {float: left;padding: 40px 20px 20px 20px;margin-left: 20px}
-address {float: left;padding: 40px;font-size: 14px;line-height: 1.3em;color: #666;}
-.bank_info h2 {
-	color: #666;padding: 10px 0 20px 0;
-	font-size: 16px;font-weight: bold;
+/* footer */
+footer {
+	height: 200px;background: #eee;
 }
-.bank_info span {line-height: 1.3em;}
-.bank_info .txt_1 {font-size: 16px;color: #666;}
-.bank_info .txt_2 {font-size: 14px;}
-.bank_info .txt_3 {font-size: 14px;}
-.bank_info {float: left;padding: 10px 0;margin-left: 40px;}
+
+p {
+	line-height: 200px;
+}
 </style>
 </head>
 <body>
@@ -220,12 +209,12 @@ address {float: left;padding: 40px;font-size: 14px;line-height: 1.3em;color: #66
 					</h1>
 					<ul class="util">
 						<li><a href="joinForm.do">회원가입</a></li>
-						<li><a href="adminloginForm.do">로그인</a></li>
+						<li><a href="#">로그인</a></li>
 						<li><a href="#">장바구니</a></li>
 					</ul>
 					<form action="" class="search_form">
 						<input type="text" class="search_txt" placeholder="상품검색">
-						<input type="submit" value="검색" style="padding: 10px;">
+						<input type="submit" value="검색">
 					</form>
 				</div>
 			</div>
@@ -415,40 +404,10 @@ address {float: left;padding: 40px;font-size: 14px;line-height: 1.3em;color: #66
 			</div>
 		</main>
 		<footer>
-		<div class="footer_menu">
 			<div class="container">
-				<ul>
-					<li><a href="#">회사소개</a></li>
-					<li><a href="#">이용약관</a></li>
-					<li><a href="#">개인정보취급방침</a></li>
-					<li><a href="#">제휴문의</a></li>
-					<li><a href="#">Q&A</a></li>
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">상품후기</a></li>
-					<li><a href="#">공지사항</a></li>
-				</ul>
-			</div> <!-- .container end -->
-		</div> <!-- .footer_menu end -->
-		<div class="corp_info">
-			<div class="container">
-				<img src="image/flogo.png" alt="EastGate">
-				<address>
-					서울 마포구 신촌로 176 중앙빌딩 501호 <br>
-					TEL : 02-1234-1234 / FAX : 02-123-4567 <br>사업자등록번호 : 123-45-67890
 				<p class="copyright">Copyright©.All rights reserved by EAST-GATE</p>
-				</address>
-				<div class="bank_info">
-					<h2>무통장 계좌</h2>
-					<p>
-						<span class="txt_1">1234-56-789012-34</span><br>
-						<span class="txt_2">국민은행</span><br>
-						<span class="txt_3">예금주 : (주)이스트게이트</span>
-					</p>
-				</div>
-		</div> <!-- corp_info end -->
-			</div> <!-- .container end -->
-			
-	</footer> <!-- footer end -->
+			</div>
+		</footer>
 	</div>
 </body>
 </html>
