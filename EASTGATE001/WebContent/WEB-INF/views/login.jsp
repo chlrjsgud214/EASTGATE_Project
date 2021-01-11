@@ -10,19 +10,19 @@
 <body>
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
-		alert("로그인 성공!");
-		location.href="mmain.do";
+		alert("관리자로 로그인 되었습니다");
+		location.href="adminMain.do";
 	</script>
 </c:if>
 <c:if test="${result == 0 }">
 	<script type="text/javascript">
-		alert("로그인 실패~");
-		history.go(-1);
+		alert("로그인 되었습니다");
+		location.href="mmain.do";
 	</script>
 </c:if>
 <c:if test="${result == -1 }">
 	<script type="text/javascript">
-		alert("없는 아이디!");
+		alert("로그인 실패");
 		history.back();
 	</script>
 </c:if>
