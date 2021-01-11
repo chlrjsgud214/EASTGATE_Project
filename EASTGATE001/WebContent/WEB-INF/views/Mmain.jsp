@@ -36,7 +36,7 @@
 						<li><a href="#">마이페이지</a></li>
 						<li><a href="#">문의내역</a></li>
 						<li><a href="#">장바구니</a></li>
-						<li><a href="#">로그아웃</a></li>
+						<li><a href="logout.do">로그아웃</a></li>
 					</ul>
 					<form action="" class="search_form">
 						<input type="text" class="search_txt" placeholder="상품검색">
