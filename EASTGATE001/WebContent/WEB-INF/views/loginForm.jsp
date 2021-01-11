@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>관리자 로그인</h1>
-<form action="adminlogin.do" method="post">
+<form action="loginAction.do" method="post">
 	<table>
 		<tr><th>아이디</th><td><input type="text" name="id" required="required"
 		autofocus="autofocus"></td></tr>

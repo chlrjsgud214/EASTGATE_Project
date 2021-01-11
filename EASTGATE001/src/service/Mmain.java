@@ -3,9 +3,12 @@ package service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class AdminloginForm implements CommandProcess {
+public class Mmain implements CommandProcess {
+
+	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		return "adminloginForm";
+		// TODO Auto-generated method stub
+		return "Mmain";
 	}
 
 }
