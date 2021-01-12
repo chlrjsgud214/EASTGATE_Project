@@ -1,11 +1,11 @@
 body {
 	
 }
-h2 img{    
+/* h2 img{    
 	position: absolute; top: 50px;left: 38%;display:block;
     border: 0;
-    }
-table {margin: auto;margin-top:200px;
+    } */
+table {margin: auto;
 		width:550px; 
 }
 
@@ -13,7 +13,7 @@ th {
 	padding: 20px;width: 20%;
 	background: #333; color: #fff;
 }
-th:last-child {background: #777;}
+th:last-child {background: #fff ;}
 td {
 	padding: 20px;background: #777;
 }

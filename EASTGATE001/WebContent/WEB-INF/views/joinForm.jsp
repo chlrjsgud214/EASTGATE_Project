@@ -30,13 +30,16 @@
 <body>
 <div id=container>
 	<div id=box>
-		<h2>
-			<a href="main.do"><img alt="" src="image/logo7.png"></a>
-		</h2>
+		
 		<div id=formMain>
 			<form action="joinAction.do" name="frm" onsubmit="return chk()"
 				method="post">
 				<table>
+					<tr>
+						<th colspan="2">
+							<a href="main.do"><img alt="" src="image/logo7.png"></a>
+						</th>
+					</tr>
 					<tr>
 						<th>아이디</th>
 						<td><input type="text" name="mid" required="required" autofocus="autofocus" autocomplete="off"> 
