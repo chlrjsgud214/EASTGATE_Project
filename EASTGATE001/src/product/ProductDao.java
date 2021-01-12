@@ -140,7 +140,7 @@ public class ProductDao {
              pdt.setPcount(rs.getInt("pcount")); // 재고수량
              pdt.setPimage(rs.getString("pimage")); // 썸네일
              pdt.setPcon(rs.getString("pcon")); // 제품설명
-                
+                 
              productList.add(pdt);
     	}
     } catch(Exception e) {System.out.println(e.getMessage());
