@@ -1,0 +1,31 @@
+body {
+	
+}
+h2 img{    
+	position: absolute; top: 50px;left: 38%;display:block;
+    border: 0;
+    }
+table {margin: auto;margin-top:200px;
+		width:550px; 
+}
+
+th {
+	padding: 20px;width: 20%;
+	background: #333; color: #fff;
+}
+th:last-child {background: #777;}
+td {
+	padding: 20px;background: #777;
+}
+
+#err {
+	color: red;
+	font-weight: bold;
+}
+
+.btn {
+	margin: 7px;background: #fff;
+}
+
+
+

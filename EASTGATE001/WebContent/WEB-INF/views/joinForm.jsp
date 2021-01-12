@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/form.css">
+<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 	function idChk() {
 		if (!frm.mid.value) {
@@ -13,7 +14,7 @@
 			frm.mid.focus();
 			return false;
 		}
-		$.post('idChk.do', "mid=" + frm.mid.value, function(data) {
+		$.post('idChk.do', "mid="+frm.mid.value, function(data) {
 			$('#err').html(data);
 		});
 	}
@@ -29,19 +30,17 @@
 <body>
 <div id=container>
 	<div id=box>
-		<div id=formHeader>
-			<a href="main.do"> <img alt="" src="image/logo7.png">
-			</a>
-		</div>
+		<h2>
+			<a href="main.do"><img alt="" src="image/logo7.png"></a>
+		</h2>
 		<div id=formMain>
 			<form action="joinAction.do" name="frm" onsubmit="return chk()"
 				method="post">
 				<table>
 					<tr>
 						<th>아이디</th>
-						<td><input type="text" name="mid" required="required"
-							autofocus="autofocus" autocomplete="off"> <input
-							type="button" value="중복확인" onclick="idChk()">
+						<td><input type="text" name="mid" required="required" autofocus="autofocus" autocomplete="off"> 
+							<input type="button" value="중복확인" onclick="idChk()">
 							<div id="err"></div></td>
 					</tr>
 					<tr>
@@ -77,8 +76,8 @@
 							autocomplete="off"></td>
 					</tr>
 					<tr>
-						<th colspan="2"><input type="submit" value="가입"><input
-							type="reset" value="취소"></th>
+						<th colspan="2"><input type="submit" value="가입" class="btn"><input
+							type="reset" value="취소" class="btn"></th>
 					</tr>
 				</table>
 			</form>

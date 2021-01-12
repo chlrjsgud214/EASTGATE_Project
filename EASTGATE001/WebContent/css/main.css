@@ -6,7 +6,7 @@ body {
 a {
 	text-decoration: none;color: inherit;
 }
-
+button {background: none;border: none;}
 .container {
 	width: 1080px;margin: auto;
 }
@@ -123,9 +123,14 @@ main {
 }
 
 .slider_wrap {
-	height: 360px;overflow: hidden;position: relative;margin-top: 25px;
+	height: 400px;overflow: hidden;position: relative;margin-top: 25px;
 }
-
+.dir_btn button {
+	position: absolute;font-size: 50px;color: rgba(255,255,255,0.9);
+	top: 50%;margin-top: -25px;cursor: pointer;
+}
+.left_btn {left: 10px;}
+.right_btn {right: 70px;}
 main h2 {
 	font-size: 24px;margin-bottom: 40px;margin-left: 30px;
 }
