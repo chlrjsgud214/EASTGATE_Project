@@ -32,7 +32,7 @@ public class ProductDao {
 	}
 
 	// 제품 등록
-	public int insert(Product pd, String mid) throws Exception {
+	public int insert(Product pd) throws Exception {
 		int result = 0;
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
@@ -48,7 +48,7 @@ public class ProductDao {
 			String pcode = "AA20210109001";// 제품 번호 카테고리 00~FF + DATE + pds_Seq
 
 			pstmt_scode = conn.prepareStatement(sql_scode_get);
-			pstmt_scode.setString(1, mid);
+			pstmt_scode.setString(1, "admin");
 			rs_scode = pstmt_scode.executeQuery();
 			scode = rs_scode.getString("scode");
 
