@@ -44,6 +44,10 @@ public class Admin {
 	public void setAdel(String adel) {
 		this.adel = adel;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "ID = " + aid + ", PASS = " + pass;
+	}
 	
 }

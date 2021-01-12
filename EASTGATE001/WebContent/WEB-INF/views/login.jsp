@@ -22,7 +22,13 @@
 </c:if>
 <c:if test="${result == -1 }">
 	<script type="text/javascript">
-		alert("로그인 실패");
+		alert("없는 아이디예요");
+		history.back();
+	</script>
+</c:if>
+<c:if test="${result == -2 }">
+	<script type="text/javascript">
+		alert("비밀번호가 다릅니다");
 		history.back();
 	</script>
 </c:if>
