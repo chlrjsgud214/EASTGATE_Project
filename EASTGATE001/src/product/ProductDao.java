@@ -111,7 +111,7 @@ public class ProductDao {
 	}
 
 	// 제품 리스트 불러오기
-	public ArrayList<Product> getProduct(String pcode){
+	public ArrayList<Product> getProducts(String pcode){
 			
 		Connection conn = null;   
 		PreparedStatement pstmt = null;
