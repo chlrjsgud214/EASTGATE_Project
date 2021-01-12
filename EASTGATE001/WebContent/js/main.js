@@ -3,7 +3,7 @@
  */
 $(function() {
 		$('.gnb>li').hover(function() {
-			$(this).children('ul', 'ul ul').slideDown()
+			$(this).children('ul', 'ul ul li').slideDown()
 		}, function() {
 			$('.gnb ul').hide()
 		})
@@ -28,4 +28,12 @@ $(function() {
 			$('.slider li:last-child').insertBefore('.slider li:first-child')
 			$('.slider').animate({'margin-left' : 0})
 		}
+		var n=0, pos=300;
+		$('.btn button').click(function() {
+			var name = $(this).attr('class')
+			if(name == 'right_btn1' && n<4) {n++}
+			if(name == 'left_btn1' && n>0) {n--}
+		
+			$('.menu').stop().animate({'margin-left' : -pos*n})
+		})
 })//ready

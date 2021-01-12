@@ -190,6 +190,7 @@
 			<div class="product1">
 				<div class="container">
 					<h2>추천상품</h2>
+					<button class="more"><i class="fas fa-plus"></i></button>
 					<div class="contents">
 						<div class="box">
 							<ul>
@@ -207,12 +208,17 @@
 								</a></li>
 							</ul>
 						</div>
+						<div class="btn">
+							<button class="left_btn1"><i class="fas fa-chevron-left"></i></button>
+							<button class="right_btn1"><i class="fas fa-chevron-right"></i></button>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="product1">
 				<div class="container">
 					<h2>인기상품</h2>
+					<button class="more"><i class="fas fa-plus"></i></button>
 					<div class="contents">
 						<div class="box">
 							<ul>
@@ -229,6 +235,10 @@
 										class="txt_name">상품명4</span> <span class="txt_price">가격</span>
 								</a></li>
 							</ul>
+						</div>
+						<div class="btn">
+							<button class="left_btn1"><i class="fas fa-chevron-left"></i></button>
+							<button class="right_btn1"><i class="fas fa-chevron-right"></i></button>
 						</div>
 					</div>
 				</div>

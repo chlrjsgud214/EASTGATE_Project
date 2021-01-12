@@ -71,5 +71,5 @@ select * from tab;
 create sequence pdt_seq;
 
 select * from PRODUCT;
-
+select * from MEMBER;
 create sequence admin_mcode;
