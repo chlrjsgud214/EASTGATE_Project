@@ -30,10 +30,9 @@
 <body>
 <div id=container>
 	<div id=box>
-		<div id=formHeader>
-			<a href="main.do"> <img alt="" src="image/logo7.png">
-			</a>
-		</div>
+		<h2>
+			<a href="main.do"><img alt="" src="image/logo7.png"></a>
+		</h2>
 		<div id=formMain>
 			<form action="joinAction.do" name="frm" onsubmit="return chk()"
 				method="post">
@@ -77,8 +76,8 @@
 							autocomplete="off"></td>
 					</tr>
 					<tr>
-						<th colspan="2"><input type="submit" value="가입"><input
-							type="reset" value="취소"></th>
+						<th colspan="2"><input type="submit" value="가입" class="btn"><input
+							type="reset" value="취소" class="btn"></th>
 					</tr>
 				</table>
 			</form>
