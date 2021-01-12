@@ -206,7 +206,6 @@ function CategoryValue(e) { // 카테고리 코드 보내기
                 onchange="CategoryValue(this)">
                     <option>소분류 선택</option>
                   </select>
-                 <input type="text" value="re">
               </div></td>
         </tr>
         <tr>
