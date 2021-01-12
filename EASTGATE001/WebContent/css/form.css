@@ -1,11 +1,10 @@
 body {
 	
 }
-/* h2 img{    
-	position: absolute; top: 50px;left: 38%;display:block;
-    border: 0;
-    } */
-table {margin: auto;
+h2 {
+	text-align: center;
+}
+table {margin: auto;margin-top:40px;
 		width:550px; 
 }
 
@@ -19,13 +18,15 @@ td {
 }
 
 #err {
-	color: red;
+	color: #f56642;
 	font-weight: bold;
 }
 
 .btn {
 	margin: 7px;background: #fff;
+	cursor: pointer;
 }
+.join {text-decoration: none;color: none;border: 1px solid #111;}
 
 
 
