@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="js/main.js" charset="utf-8"></script>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/main.css">
 <script>
@@ -174,8 +175,13 @@
 						<div class="slider">
 							<ul>
 								<li><img src="image/visual1.png" alt="후기쓰고 상품 받자"></li>
-
+								<li><img src="image/visual2.png" alt="후기쓰고 상품 받자"></li>
+								<li><img src="image/visual3.png" alt="후기쓰고 상품 받자"></li>
 							</ul>
+						</div>
+						<div class="dir_btn">
+							<button class="left_btn"><i class="fas fa-chevron-circle-left"></i></button>
+							<button class="right_btn"><i class="fas fa-chevron-circle-right"></i></button>
 						</div>
 					</div>
 				</div>
