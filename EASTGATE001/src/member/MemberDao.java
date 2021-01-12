@@ -29,9 +29,9 @@ public class MemberDao {
 		}
 	}
 
-	public Member select(String id) {
+	public Member select(String mid) {
 		
-		return (Member)session.selectOne("members.select", id);
+		return (Member)session.selectOne("members.select", mid);
 	}
 	public int insert(Member member) {
 		

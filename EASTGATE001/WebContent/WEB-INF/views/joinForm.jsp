@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/form.css">
+<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 	function idChk() {
 		if (!frm.mid.value) {
@@ -13,7 +14,7 @@
 			frm.mid.focus();
 			return false;
 		}
-		$.post('idChk.do', "mid=" + frm.mid.value, function(data) {
+		$.post('idChk.do', "mid="+frm.mid.value, function(data) {
 			$('#err').html(data);
 		});
 	}
@@ -39,9 +40,8 @@
 				<table>
 					<tr>
 						<th>아이디</th>
-						<td><input type="text" name="mid" required="required"
-							autofocus="autofocus" autocomplete="off"> <input
-							type="button" value="중복확인" onclick="idChk()">
+						<td><input type="text" name="mid" required="required" autofocus="autofocus" autocomplete="off"> 
+							<input type="button" value="중복확인" onclick="idChk()">
 							<div id="err"></div></td>
 					</tr>
 					<tr>
