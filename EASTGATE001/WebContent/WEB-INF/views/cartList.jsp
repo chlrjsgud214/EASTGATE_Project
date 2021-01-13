@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/form.css">
+<link rel="stylesheet" href="css/cart.css">
 <script type="text/javascript">
 	function fnPay() {
 		alert("결제 API를 발급 받으시기 발바니다.");
