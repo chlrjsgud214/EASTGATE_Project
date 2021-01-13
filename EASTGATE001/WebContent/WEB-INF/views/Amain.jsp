@@ -11,16 +11,6 @@
 <script src="js/main.js" charset="utf-8"></script>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/main.css">
-<script>
-	$(function() {
-		$('.gnb>li').hover(function() {
-			$(this).children('ul', 'ul ul').slideDown()
-		}, function() {
-			$('.gnb ul').hide()
-		})
-
-	})//ready
-</script>
 
 </head>
 <body>
@@ -40,7 +30,7 @@
 					</ul>
 					<form action="" class="search_form">
 						<input type="text" class="search_txt" placeholder="상품검색">
-						<input type="submit" value="검색" style="padding: 10px;">
+						<input type="submit" value="검색">
 					</form>
 				</div>
 			</div>
@@ -275,8 +265,9 @@
 						<span class="txt_3">예금주 : (주)이스트게이트</span>
 					</p>
 				</div>
-			</div>
-		</div>			
+				</div> <!-- corp_info end -->
+			</div> <!-- .container end -->
+			
 		</footer> <!-- footer end -->
 	</div>
 </body>
