@@ -180,7 +180,31 @@ function CategoryValue(e) { // 카테고리 코드 보내기
     document.getElementById('result').innerText=cval;
 }
    </script>
-   
+<style>
+h2 {
+	text-align: center;
+}
+form {margin: 100px 0;}
+table {margin: auto;
+		width:800px; 
+}
+
+th {
+	padding: 20px;width: 20%;
+	background: #333; color: #fff;border: 1px solid #fff;
+}
+tr:last-child th {text-align: right;}
+tr:last-child th input {background: #fff;font-size: 20px;color: #333; text-shadow: none;cursor: pointer;}
+td {
+	padding: 20px;background: #777;border: 1px solid #fff;
+}
+
+#err {
+	color: #f56642;
+	font-weight: bold;
+}
+
+</style>
    
 </head>
 <body>
@@ -228,7 +252,7 @@ function CategoryValue(e) { // 카테고리 코드 보내기
         <tr>
             <th>제품 설명</th>  <td><div id="productnote" name="pcon"></div> </td>
         </tr>
-        <tr><th colspan="2"><input type="submit" value="제품 등록"></th></tr>
+        <tr><th colspan="2"><input type="submit" value="상품 등록"></th></tr>
     </table>
 </form>
 </body>
