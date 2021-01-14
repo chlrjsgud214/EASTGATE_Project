@@ -24,7 +24,7 @@
 						</a>
 					</h1>
 					<ul class="util">
-						<li><a href="#">마이페이지</a></li>
+						<li><a href="mypageForm.do">마이페이지</a></li>
 						<li><a href="#">문의내역</a></li>
 						<li><a href="cartList.do">장바구니</a></li>
 						<li><a href="productForm.do">제품등록 - 시연용</a></li>
