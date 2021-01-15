@@ -51,10 +51,10 @@
 			<td><input type="email" name="email" required="required" value="${member.email }"></td>
 		</tr>
 		<tr>
-			<th colspan="2"><input type="submit" value="가입"><input type="reset" value="취소"></th>
+			<th colspan="2"><input type="submit" value="수정"><input type="reset" value="취소"></th>
 		</tr>
 	</table>
 </form>
-<a href="main.do">메인으로로</a>
+<a href="mmain.do">메인으로</a>
 </body>
 </html>

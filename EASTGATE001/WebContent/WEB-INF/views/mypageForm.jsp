@@ -10,7 +10,7 @@
 <h2>마이페이지</h2>
 <table>
 	<tr>
-		<th><a href="updateForm.do">회원정보 수정</a></th>
+		<th><a href="select.do">회원정보</a></th>
 	</tr>
 	<tr>
 		<th><a href="#">주문내역</a></th>

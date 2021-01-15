@@ -35,12 +35,13 @@ public class LoginAction implements CommandProcess {
 		} else {
 			MemberDao md = MemberDao.getInstance();
 			Member member = md.select(id);
-			if (member == null) {
+			
+			if (member == null || member.getDel().equals("y")) {
 				result = -1;
 			} else {
 				if (password.equals(member.getPassword())) {
 					result = 0;
-					session.setAttribute("mid", member.getPassword());
+					session.setAttribute("id", member.getId());
 				} else {
 					result = -2;
 				}
