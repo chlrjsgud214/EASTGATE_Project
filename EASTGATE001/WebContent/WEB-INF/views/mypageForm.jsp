@@ -16,7 +16,7 @@
 		<th><a href="#">주문내역</a></th>
 	</tr>
 	<tr>
-		<th><a>회원탈퇴</a></th>
+		<th><a href="deleteAction.do">회원탈퇴</a></th>
 	</tr>
 </table>
 </body>

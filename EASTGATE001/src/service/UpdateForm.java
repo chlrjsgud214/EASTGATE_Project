@@ -12,9 +12,9 @@ public class UpdateForm implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		String mid = (String) session.getAttribute("mid");
+		String id = (String) session.getAttribute("id");
 		MemberDao md = MemberDao.getInstance();
-		Member member = md.select(mid);
+		Member member = md.select(id);
 		request.setAttribute("member", member);
 		return "updateForm";
 	}

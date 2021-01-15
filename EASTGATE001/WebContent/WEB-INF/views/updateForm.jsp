@@ -20,11 +20,11 @@
 </head>
 <body>
 <form action="updateAction.do" name="frm" onsubmit="return chk()" method="post">
-<input type="hidden" name="mid" value="${member.mid }">
+<input type="hidden" name="id" value="${member.id }">
 	<table>
 		<tr>
 			<th>아이디</th>
-			<td>${member.mid }</td>
+			<td>${member.id }</td>
 		</tr>
 		<tr>
 			<th>암호</th>
@@ -36,7 +36,7 @@
 		</tr>
 		<tr>
 			<th>이름</th>
-			<td><input type="text" name="name" required="required" value="${member.mname }"></td>
+			<td><input type="text" name="name" required="required" value="${member.name }"></td>
 		</tr>
 		<tr>
 			<th>전화번호</th>
@@ -45,6 +45,10 @@
 		<tr>
 			<th>주소</th>
 			<td><input type="text" name="addr" required="required" value="${member.addr }"></td>
+		</tr>
+		<tr>
+			<th>이메일</th>
+			<td><input type="email" name="email" required="required" value="${member.email }"></td>
 		</tr>
 		<tr>
 			<th colspan="2"><input type="submit" value="가입"><input type="reset" value="취소"></th>

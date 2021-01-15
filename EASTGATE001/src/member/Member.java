@@ -1,52 +1,31 @@
 package member;
 
 public class Member {
-	private String mcode;
-	private String scode;
-	private String mid;    
-	private String mpass;
-	private String mname; 
-	private String resinum; 
-	private String tel;  
-	private String addr; 
-	private String join;   
-	private String mdel;
-	
-	public String getMcode() {
-		return mcode;
+	private String id;    
+	private String password;  
+	private String name;  
+	private String tel;    
+	private String addr;  
+	private String email;
+    private String reg_date;
+	private String del;
+	public String getId() {
+		return id;
 	}
-	public void setMcode(String mcode) {
-		this.mcode = mcode;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getScode() {
-		return scode;
+	public String getPassword() {
+		return password;
 	}
-	public void setScode(String scode) {
-		this.scode = scode;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public String getMid() {
-		return mid;
+	public String getName() {
+		return name;
 	}
-	public void setMid(String mid) {
-		this.mid = mid;
-	}
-	public String getMpass() {
-		return mpass;
-	}
-	public void setMpass(String mpass) {
-		this.mpass = mpass;
-	}
-	public String getMname() {
-		return mname;
-	}
-	public void setMname(String mname) {
-		this.mname = mname;
-	}
-	public String getResinum() {
-		return resinum;
-	}
-	public void setResinum(String resinum) {
-		this.resinum = resinum;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getTel() {
 		return tel;
@@ -60,17 +39,23 @@ public class Member {
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
-	public String getJoin() {
-		return join;
+	public String getEmail() {
+		return email;
 	}
-	public void setJoin(String join) {
-		this.join = join;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getMdel() {
-		return mdel;
+	public String getReg_date() {
+		return reg_date;
 	}
-	public void setMdel(String mdel) {
-		this.mdel = mdel;
+	public void setReg_date(String reg_date) {
+		this.reg_date = reg_date;
+	}
+	public String getDel() {
+		return del;
+	}
+	public void setDel(String del) {
+		this.del = del;
 	}
 	
 }

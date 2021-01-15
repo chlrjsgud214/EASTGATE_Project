@@ -38,9 +38,9 @@ public class LoginAction implements CommandProcess {
 			if (member == null) {
 				result = -1;
 			} else {
-				if (password.equals(member.getMpass())) {
+				if (password.equals(member.getPassword())) {
 					result = 0;
-					session.setAttribute("mid", member.getMid());
+					session.setAttribute("mid", member.getPassword());
 				} else {
 					result = -2;
 				}

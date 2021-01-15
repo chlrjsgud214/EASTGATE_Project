@@ -9,9 +9,9 @@ import member.MemberDao;
 public class IdChk implements CommandProcess {
 
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		String mid = request.getParameter("mid");
+		String id = request.getParameter("id");
 		MemberDao md = MemberDao.getInstance();
-		Member member = md.select(mid);
+		Member member = md.select(id);
 		String msg = "";
 		if(member == null) msg = "사용가능한 아이디 입니다";
 		else msg = "이미 사용중인 아이디 입니다";

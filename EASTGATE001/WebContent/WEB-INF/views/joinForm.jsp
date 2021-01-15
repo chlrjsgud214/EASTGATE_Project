@@ -9,12 +9,12 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 	function idChk() {
-		if (!frm.mid.value) {
+		if (!frm.id.value) {
 			alert("아이디를 입력하세요");
-			frm.mid.focus();
+			frm.id.focus();
 			return false;
 		}
-		$.post('idChk.do', "mid="+frm.mid.value, function(data) {
+		$.post('idChk.do', "id="+frm.id.value, function(data) {
 			$('#err').html(data);
 		});
 	}
@@ -42,7 +42,7 @@
 					</tr>
 					<tr>
 						<th>아이디</th>
-						<td><input type="text" name="mid" required="required" autofocus="autofocus" autocomplete="off"> 
+						<td><input type="text" name="id" required="required" autofocus="autofocus" autocomplete="off"> 
 							<input type="button" value="중복확인" onclick="idChk()">
 							<div id="err"></div></td>
 					</tr>
@@ -62,13 +62,6 @@
 							autocomplete="off"></td>
 					</tr>
 					<tr>
-						<th>주민번호</th>
-						<td><input type="text" name="resinumFront"
-							required="required" autocomplete="off">- <input
-							type="password" name="resinumBack" required="required"
-							autocomplete="off"></td>
-					</tr>
-					<tr>
 						<th>전화번호</th>
 						<td><input type="tel" name="tel" required="required"
 							pattern="\d{3}-\d{3,4}-\d{4}" placeholder="010-xxxx-xxxx"></td>
@@ -77,6 +70,10 @@
 						<th>주소</th>
 						<td><input type="text" name="addr" required="required"
 							autocomplete="off"></td>
+					</tr>
+					<tr>
+						<th>이메일</th>
+						<td><input type="email" name="email" required="required"></td>
 					</tr>
 					<tr>
 						<th colspan="2"><input type="submit" value="가입" class="btn"><input
