@@ -12,7 +12,6 @@ public class CartInsert implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		int result = 0;
 		String pcode = request.getParameter("pcode");  
-		String ccode = request.getParameter("ccode");
 		String mcode = request.getParameter("mcode");
 		int ocount = Integer.parseInt(request.getParameter("ocount"));
 		String pname = request.getParameter("pname");
@@ -23,11 +22,11 @@ public class CartInsert implements CommandProcess {
 		if(cart == null) {
 			cart = new Cart();
 			cart.setPcode(pcode);
-			cart.setCcode(ccode);
 			cart.setMcode(mcode);
 			cart.setOcount(ocount);
 			request.setAttribute("pname", pname);
 			request.setAttribute("price", price);
+			result = cd.insert(cart);
 		} else result = -1;
 		request.setAttribute("result", result);
 		return "cartList";

@@ -6,6 +6,6 @@
 		select * from cart where pcode=#{pcode }
 	</select>
 	<insert id="insert" parameterType="cart">
-		insert into cart values(#{pcode }, #{ccode }, #{mcode }, #{ocount } )
+		insert into cart values(#{pcode }, cart_code.nextval, #{mcode }, #{ocount } )
 	</insert>
 </mapper>

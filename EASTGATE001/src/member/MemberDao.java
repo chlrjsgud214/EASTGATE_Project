@@ -37,13 +37,14 @@ public class MemberDao {
 		
 		return session.insert("members.insert", member);
 	}
+	public int update(Member member) {
+		
+		return session.update("members.update", member);
+	}
 	public int delete(String mid) {
 		
 		return session.update("members.delete", mid);
 	}
-	public int update(Member member) {
-	
-		return session.update("members.update", member);
-	}
+
 
 }

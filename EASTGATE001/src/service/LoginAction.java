@@ -40,7 +40,7 @@ public class LoginAction implements CommandProcess {
 			} else {
 				if (password.equals(member.getMpass())) {
 					result = 0;
-					session.setAttribute("member", member);
+					session.setAttribute("mid", member.getMid());
 				} else {
 					result = -2;
 				}

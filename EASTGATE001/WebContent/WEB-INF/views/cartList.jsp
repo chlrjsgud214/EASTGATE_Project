@@ -9,9 +9,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/cart.css">
 <script type="text/javascript">
-	function fnPay() {
-		alert("결제 API를 발급 받으시기 발바니다.");
-	}
 	function fnClear() {
 		if(confirm("장바구니를 비우시겠습니까?")) {
 			location.href = "cartClear.jsp";
@@ -34,7 +31,7 @@
 %>
 
 <h1>장바구니</h1>
-<form action="buyForm.do">
+<form action="ordersForm.do" method="post">
 	<table border="1">
 		<tr>
 			<th>번호</th>
@@ -44,41 +41,38 @@
 			<th>가격</th>
 		</tr>
 	<%
-		if(cart.size() ==0) {
-			out.println("<tr>");
-				out.println("<td colspan='5'>");
-				out.println("장바구니에 담긴 상품이 없습니다.");
-				out.println("<a href='mmain.do'>주문하기</a>");
-				out.println("</td>");
-			out.println("</tr>");
-		} else {
-			int totalSum = 0, total = 0;			
+		if(cart.size() ==0) { %>
+		<tr>
+			<td colspan="5">장바구니에 담긴 상품이 없습니다. <a href="mmain.do">쇼핑계속하기</a></td>
+		</tr>
+	<%	} else {	%>
+		<input type="hidden" name="pcode" value="${pcode }">
+		<input type="hidden" name="mcode" value="${mcode }">
+	<%		int totalSum = 0, total = 0;			
 			String pname = request.getParameter("pname");
 			int price = Integer.parseInt(request.getParameter("price"));
 	
-			for(int i = 0; i < cart.size(); i++) {
-				Cart ct = cart.get(i); 
-				out.println("<tr>");
-					out.println("<td>"+i+1+"</td>");
-					out.println("<td>"+pname+"</td>");
-					out.println("<td>"+price+"</td>");
-					out.println("<td>"+ct.getOcount()+"</td>");
-					total = price * ct.getOcount();
-					out.println("<td>"+total+"</td>");
-				out.println("</tr>");
-				totalSum += total;
-			}
-			out.println("<tr>");
-				out.println("<td colspan='4'>");
-					out.println("<input type='button' value='결제하기' onclick='fnPay()' />");
-					out.println("<input type='button' value='장바구니 비우기' onclick='fnClear()' />");
-					out.println("<input type='button' value='쇼핑 계속하기' onclick='fnGo()' />");
-				out.println("</td><td>");
-				out.println(totalSum+"</td>");
-			out.println("<tr>");
-		}
-	%>
-		
+			for(int i = 0; i < cart.size(); i++) { 
+				Cart ct = cart.get(i); %>
+		<tr>
+			<td><%= i+1 %></td>
+			<td><%=pname %></td>
+			<td><%=price %></td>
+			<td><%=ct.getOcount() %></td>
+			<%total = price * ct.getOcount(); %>
+			<td><%=total %></td>
+		</tr>		
+	<%			totalSum += total;
+			}  %>
+		<tr>
+			<td colspan="4">
+				<input type='submit' value='주문하기' />
+				<input type='button' value='장바구니 비우기' onclick='fnClear()' />
+				<input type='button' value='쇼핑 계속하기' onclick='fnGo()' /></td>
+			<td><%=totalSum %></td>
+		</tr>	
+	<%	}
+	%>		
 	</table>
 </form>
 </body>

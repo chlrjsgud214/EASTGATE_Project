@@ -1,75 +1,60 @@
-CREATE TABLE admin (
-	acode varchar2(10) CONSTRAINT admin_acode_pk PRIMARY KEY, 
-	aid varchar2(15) NULL,      
-	pass varchar2(20) NULL,     
-	ename varchar2(10) NULL,   
-	tel varchar2(30) NULL,   
-	adel varchar2(1)  NULL     
+CREATE TABLE member (
+	id varchar2(15) CONSTRAINT member_id_pk PRIMARY KEY,    
+	password varchar2(20) NOT NULL,   
+	name varchar2(50) NOT NULL,  
+	tel varchar2(30) NOT NULL,    
+	addr varchar2(255) NOT NULL,   
+	email varchar2(40) NOT NULL,
+    reg_date varchar2(15) NOT NULL,
+	del varchar2(1)  NULL    
 );
 
 CREATE TABLE notice (
-    acode CONSTRAINT notice_acode_fk REFERENCES admin(acode), 
-	ncode varchar2(20) NULL,   
-	nsubject varchar2(100) NULL,     
-	ndate varchar2(12) NULL,    
-	ncontent varchar2(3000) NULL    
+    id CONSTRAINT notice_id_fk REFERENCES member(id), 
+	nnum NUMBER NOT NULL,   
+	nsubject varchar2(100) NOT NULL,         
+	ncontent varchar2(3000) NOT NULL,    
+    ndate varchar2(15) NOT NULL,
+    ncount NUMBER NOT NULL
 );
 
-CREATE TABLE member (
-	mcode varchar2(10) CONSTRAINT member_mcode_pk PRIMARY KEY, 
-	scode varchar2(10) NOT NULL, 
-	mid varchar2(15) NULL,    
-	mpass varchar2(20) NULL,   
-	mname varchar2(10) NULL,  
-	resinum varchar2(14) NULL, 
-	tel varchar2(30) NULL,    
-	addr varchar2(50) NULL,   
-	join varchar2(14) NULL,   
-	mdel varchar2(1)  NULL    
-);
-
-CREATE TABLE review (
-	mcode varchar2(10) CONSTRAINT review_mcode_fk REFERENCES member(mcode),
-	rcode  varchar2(20)   NULL,    
-	rdate varchar2(12)   NULL,   
-	rcontent varchar2(3000) NULL,   
-	rsubject varchar2(100)  NULL,  
-	rwriter varchar2(50)   NULL,  
-	pcode varchar2(10)   NULL 
+drop table board;
+CREATE TABLE board (
+	id CONSTRAINT board_id_fk REFERENCES member(id), 
+	num NUMBER NOT NULL,   
+	subject varchar2(100) NOT NULL,         
+	content varchar2(3000) NOT NULL,    
+    bdate varchar2(15) NOT NULL,
+    readcount NUMBER NOT NULL
 );
 
 CREATE TABLE product (
 	pcode varchar2(10) CONSTRAINT product_pcode_pk PRIMARY KEY,
-	scode varchar2(10)   NOT NULL, 
-	pname  varchar2(15)   NULL,   
-	price  number(10)     NULL, 
-	pcount  number(10)     NULL,  
-	pimage  varchar2(200)  NULL,  
-	pcon  varchar2(3000) NULL  
+	pid CONSTRAINT product_pid_fk REFERENCES member(id),
+	pname  varchar2(15)  NOT NULL,   
+    image  varchar2(200)  NULL, 
+	price  NUMBER    NOT NULL, 
+	pcount  NUMBER    NOT NULL,  
+	explain  varchar2(3000) NULL  
 );
 
 CREATE TABLE cart (
 	pcode CONSTRAINT cart_pcode_fk REFERENCES product(pcode), 
-	ccode  varchar2(20) CONSTRAINT cart_ccode_pk PRIMARY KEY,
-	mcode CONSTRAINT cart_mcode_fk REFERENCES member(mcode), 
-	ocount number(10)   NULL   
+	id CONSTRAINT cart_id_fk REFERENCES member(id), 
+    pname  varchar2(15)  NOT NULL,   
+    image  varchar2(200)  NULL, 
+	price  NUMBER    NOT NULL,
+	ocount NUMBER  NOT NULL   
 );
 
 
 CREATE TABLE orders (
 	pcode CONSTRAINT order_pcode_fk REFERENCES product(pcode), 
-	mcode CONSTRAINT order_mcode_fk REFERENCES member(mcode) , 
-	ocode  varchar2(20) CONSTRAINT order_ocode_pk PRIMARY KEY, 
-	ocount number(10)   NULL,
-	odel varchar2(1)  NULL, 
-	oprice number(10)   NULL,
-	odate varchar2(12) NULL  
+	id CONSTRAINT orders_id_fk REFERENCES member(id),  
+    pname  varchar2(15)  NOT NULL,   
+    image  varchar2(200)  NULL, 
+	price  NUMBER    NOT NULL,
+	ocount NUMBER  NOT NULL,
+    odate VARCHAR2(15) NOT NULL,
+	odel varchar2(1) NOT NULL	 
 );
-
-select * from tab;
-
-create sequence pdt_seq;
-
-select * from PRODUCT;
-select * from MEMBER;
-create sequence admin_mcode;
