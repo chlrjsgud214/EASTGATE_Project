@@ -1,31 +1,43 @@
 package orders;
 
 public class Orders {
-	private String pcode; 
-	private String mcode; 
-	private String ocode; 
+	private String pcode;
+	private String id;
+    private String pname; 
+    private String image;
+	private int price;
 	private int ocount;
-	private String odel; 
-	private int oprice;
-	private String odate;
-	
+    private String odate;
+	private String odel;
 	public String getPcode() {
 		return pcode;
 	}
 	public void setPcode(String pcode) {
 		this.pcode = pcode;
 	}
-	public String getMcode() {
-		return mcode;
+	public String getId() {
+		return id;
 	}
-	public void setMcode(String mcode) {
-		this.mcode = mcode;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getOcode() {
-		return ocode;
+	public String getPname() {
+		return pname;
 	}
-	public void setOcode(String ocode) {
-		this.ocode = ocode;
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
 	}
 	public int getOcount() {
 		return ocount;
@@ -33,22 +45,17 @@ public class Orders {
 	public void setOcount(int ocount) {
 		this.ocount = ocount;
 	}
+	public String getOdate() {
+		return odate;
+	}
+	public void setOdate(String odate) {
+		this.odate = odate;
+	}
 	public String getOdel() {
 		return odel;
 	}
 	public void setOdel(String odel) {
 		this.odel = odel;
 	}
-	public int getOprice() {
-		return oprice;
-	}
-	public void setOprice(int oprice) {
-		this.oprice = oprice;
-	}
-	public String getOdate() {
-		return odate;
-	}
-	public void setOdate(String odate) {
-		this.odate = odate;
-	}  
+	
 }

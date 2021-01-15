@@ -32,13 +32,17 @@ public class CartDao {
 		}
 	}
 
-	public Cart select(String pcode) {
+	public Cart select(String id) {
 		// TODO Auto-generated method stub
-		return (Cart)session.selectOne("carts.select", pcode);
+		return (Cart)session.selectOne("carts.select", id);
 	}
 	public int insert(Cart cart) {
 		
 		return session.insert("carts.insert", cart);
+	}
+	public int delete(String id) {
+		// TODO Auto-generated method stub
+		return session.delete("carts.delete", id);
 	}
 	
 	

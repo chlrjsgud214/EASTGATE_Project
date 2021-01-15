@@ -2,10 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="carts">
-	<select id="select" parameterType="String" resultType="Cart">
-		select * from cart where pcode=#{pcode }
+	<select id="select" parameterType="String" resultType="cart">
+		select * from cart where id=#{id }
 	</select>
 	<insert id="insert" parameterType="cart">
-		insert into cart values(#{pcode }, cart_code.nextval, #{mcode }, #{ocount } )
+		insert into cart values(#{pcode }, #{id }, #{pname }, #{image }, #{price }, #{ocount } )
 	</insert>
+	<delete id="delete" parameterType="cart">
+		delete from cart where id = #{id }
+	</delete>
 </mapper>

@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="orderns">
-	<select id="select" parameterType="string" resultType="Orders">
-		select * from Orders where ocode=#{ocode}
+	<select id="select" parameterType="string" resultType="orders">
+		select * from orders where id=#{id}
 	</select>
 	<insert id="insert" parameterType="orders">
-		insert into orders values(#{pcode}, #{mcode}, orders_ocode.nextval, #{ocount}, n, #{oprice}, sysdate)
+		insert into orders values(#{pcode }, #{id }, #{pname}, #{image }, #{price }, #{ocount }, sysdate, 'n')
 	</insert>
 </mapper>
