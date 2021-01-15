@@ -49,7 +49,7 @@
 		<tr>
 			<th>이메일</th>
 			<td><input type="email" name="email" required="required" value="${member.email }"></td>
-		</tr>
+		</tr> 
 		<tr>
 			<th colspan="2"><input type="submit" value="수정"><input type="reset" value="취소"></th>
 		</tr>
