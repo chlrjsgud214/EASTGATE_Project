@@ -28,35 +28,31 @@
 	} else {
 		cart = (ArrayList<Cart>) obj;
 	}
-%>
-
-<h1>장바구니</h1>
-<form action="ordersForm.do" method="post">
+	
+	if(cart.size() ==0) { 	%>
+	<h1>장바구니</h1>	
+	<table border="1">
+		<tr>
+			<td>장바구니에 담긴 상품이 없습니다. <a href="mmain.do">쇼핑계속하기</a></td>
+		</tr>
+	</table>
+	<%	} else {	%>
+	<h1>장바구니</h1>
+	<form action="ordersForm.do" method="post">
 	<table border="1">
 		<tr>
 			<th>번호</th>
 			<th>상품명</th>
-			<th>상품이미지</th>
 			<th>판매가격</th>
 			<th>수량</th>
-			<th>가격</th>
+			<th>금액</th>
 		</tr>
-	<%
-		if(cart.size() ==0) { %>
-		<tr>
-			<td colspan="6">장바구니에 담긴 상품이 없습니다. <a href="mmain.do">쇼핑계속하기</a></td>
-		</tr>
-	<%	} else {	%>
-	
-		<input type="hidden" name="pcode" value="${pcode }">
-		<input type="hidden" name="id" value="${id }">
 	<%		int totalSum = 0, total = 0;			
 			for(int i = 0; i < cart.size(); i++) { 
 				Cart ct = cart.get(i); %>
 		<tr>
 			<td><%= i+1 %></td>
-			<td><%=ct.getPname() %></td>
-			<td><%=ct.getImage() %></td>
+			<td><img src="../image/<%=ct.getImage() %>"><%=ct.getPname() %></td>
 			<td><%=ct.getPrice() %></td>
 			<td><%=ct.getOcount() %></td>
 			<%total = ct.getPrice() * ct.getOcount(); %>
@@ -65,11 +61,14 @@
 	<%			totalSum += total;
 			}  %>
 		<tr>
+			<td colspan="5" align="right"><b>총금액 : <%=totalSum %>원 </b></td>
+		</tr>
+		<tr>
 			<td colspan="5">
 				<input type='submit' value='주문하기' />
+				<input type='button' value='쇼핑 계속하기' onclick='fnGo()' />
 				<input type='button' value='장바구니 비우기' onclick='fnClear()' />
-				<input type='button' value='쇼핑 계속하기' onclick='fnGo()' /></td>
-			<td><%=totalSum %></td>
+				</td>
 		</tr>	
 	<%	}
 	%>		

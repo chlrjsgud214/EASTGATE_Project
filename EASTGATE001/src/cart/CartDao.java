@@ -44,6 +44,10 @@ public class CartDao {
 		// TODO Auto-generated method stub
 		return session.delete("carts.delete", id);
 	}
+	public ArrayList<Cart> getCart(String id) {
+		
+		return (ArrayList<Cart>) session.selectList("carts.select", id);
+	}
 	
 	
 

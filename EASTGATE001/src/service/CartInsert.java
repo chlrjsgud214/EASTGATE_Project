@@ -18,6 +18,7 @@ public class CartInsert implements CommandProcess {
 		int price = Integer.parseInt(request.getParameter("price"));
 		int ocount = Integer.parseInt(request.getParameter("ocount"));
 		CartDao cd = CartDao.getInstance();
+		
 		Cart cart = new Cart();
 		
 			cart.setPcode(pcode);
