@@ -2,13 +2,14 @@ package product;
 
 public class Product {
 	private String pcode;  // 제품 코드
-	private String scode;  // 판매자 코드
-	
+	private String pid;  // 판매자 ID	
 	private String pname;  // 판매자 이름 	writer
 	private int price;     // 가격			option
 	private int pcount;    // 재고 수량		product count
 	private String pimage; // 썸네일 이미지 fileimg
 	private String pcon;   // 제품 설명		contents
+	private String explain;
+	
 	
 	public String getPcode() {
 		return pcode;
@@ -16,11 +17,11 @@ public class Product {
 	public void setPcode(String pcode) {
 		this.pcode = pcode;
 	}
-	public String getScode() {
-		return scode;
+	public String getPid() {
+		return pid;
 	}
-	public void setScode(String scode) {
-		this.scode = scode;
+	public void setPid(String pid) {
+		this.pid = pid;
 	}
 	public String getPname() { 
 		return pname;
@@ -51,6 +52,12 @@ public class Product {
 	}
 	public void setPcon(String pcon) {
 		this.pcon = pcon;
+	}
+	public String getExplain() {
+		return explain;
+	}
+	public void setExplain(String explain) {
+		this.explain = explain;
 	} 
 	
 	

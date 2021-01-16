@@ -1,5 +1,8 @@
+<%@page import="member.MemberDao"%>
+<%@page import="member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ include file="sessionChk.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +10,7 @@
     <title>EAST-GATE 상품등록</title>   
     
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+<script type="text/javascript" src="js/jquery.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
 
 <!-- include summernote css/js-->
@@ -69,7 +72,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         if (window.File && window.FileList && window.FileReader) {
-            $("#pimage").on("change", function(e) {
+            $("#pimageid").on("change", function(e) {
                 var files = e.target.files,
                 filesLength = files.length;
                 for (var i = 0; i < filesLength; i++) {
@@ -172,12 +175,13 @@ function CategoryChange_middle(e) { // 중분류 선택시 소분류 설정
         else var x00=x; // 자릿수 4개로 맞추기
         opt.value = e.value+x00; // 최종 제품 카테고리 코드 4자리
         opt.innerHTML = lselect[x];
+      
         low_option.appendChild(opt);
     }   
 }
 function CategoryValue(e) { // 카테고리 코드 보내기
     var cval=e.value;
-    document.getElementById('result').innerText=cval;
+    document.getElementById('pcode').value=cval;
 }
    </script>
 <style>
@@ -205,10 +209,12 @@ td {
 }
 
 </style>
-   
+<% 
+String id = (String)session.getAttribute("id");
+%>
 </head>
 <body>
-	<form action="Product_Upload.action" method="post"
+	<form name="productForm" action="ProductUpload.do" method="post"
     enctype="multipart/form-data">
     <table>
     	<tr><th>카테고리 선택</th><td>
@@ -216,7 +222,7 @@ td {
                 <select class="category_select_top" id="Category_top" name="Category_top" 
                 onchange="CategoryChange_top(this)">
                   <option>대분류 선택</option>
-                  <option value="C">패션의류/잡화</option>
+                  <option value="C" >패션의류/잡화</option>
                   <option value="S">스포츠</option>
                   <option value="B">뷰티</option>
                   <option value="F">식품</option>
@@ -226,7 +232,7 @@ td {
                 onchange="CategoryChange_middle(this)">
                   <option>중분류 선택</option>
                 </select>
-                <select class="category_select_low" id="Category_low" name="Category_low"
+                <select class="category_select_low" id="Category_low" name="pcode"
                 onchange="CategoryValue(this)">
                     <option>소분류 선택</option>
                   </select>
@@ -236,12 +242,16 @@ td {
             <th>제목</th><td><input type="text" name="pname"
             required="required" autofocus="autofocus"></td>
         </tr>
-        <tr>            
+        <tr>
+			<th>판매자 ID</th>
+			<td><%=id%></td>
+		</tr>
+        <tr>             
             <th>썸네일 이미지</th>  
             <td> 
                 <div class="field" align="left" >
                 <span>
-                    <input type="file" id="pimage" name="pimage[]" multiple />
+                    <input type="file" id="pimageid" name="pimage" multiple />
                 </span>
                 </div>
             </td>
@@ -249,8 +259,14 @@ td {
         <tr>
             <th>가격</th><td><input type="text" name="price" required="required"></td>
         </tr>
+         <tr>
+            <th>재고수량</th><td><input type="text" name="pcount" required="required"></td>
+        </tr>
         <tr>
-            <th>제품 설명</th>  <td><div id="productnote" name="pcon"></div> </td>
+            <th>제품 설명</th>  <td ><div id="productnote" ></div> </td> 
+        </tr>
+         <tr>
+            <th>설명</th><td><input type="text" name="pcon"> </td>  <td> <input type="text" name="explain"> </td>
         </tr>
         <tr><th colspan="2"><input type="submit" value="상품 등록"></th></tr>
     </table>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="products">
+	<select id="select" parameterType="string" resultType="product">
+		select * from product where pid=#{id}
+	</select>
+	<insert id="insert" parameterType="product">
+		insert into product values( #{pcode}||lpad(pcode_seq.nextval,3,0), #{id}, #{pname}, #{price}, #{pcount}, #{pimage}, #{pcon}, #{explain})
+	</insert>
+	<update id="update" parameterType="product">
+		update product set pname=#{pname}, price=#{price}, pcount=#{pcount}, pimage=#{pimage},pcon=#{pcon},explain=#{explain where pid=#{id} 
+	</update> 
+	
+</mapper>

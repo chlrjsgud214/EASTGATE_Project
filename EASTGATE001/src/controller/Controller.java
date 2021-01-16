@@ -18,6 +18,7 @@ import service.CommandProcess;
 @WebServlet(urlPatterns="*.do",
 	initParams={@WebInitParam(name="config", // 이름 config
 	value="/WEB-INF/command.properties")})   // 이름에 대한 값
+
 // 확장자가 properties는 변수(키) =  값
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -68,6 +69,7 @@ public class Controller extends HttpServlet {
 	    CommandProcess com=null;
 	    try { 
 	    	  String command = request.getRequestURI();
+	    	  if(command == null) command = "";
 	    	  // url : http://localhost:8080/ch13/message.do
 	    	  // command, uri : /ch13/message.do
 	    	  // request.getContextPath() : /ch13
