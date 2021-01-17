@@ -210,22 +210,19 @@ td {
 </style>
 <% 
 String pid = (String)session.getAttribute("id");
+
 %>
 <script type="text/javascript">
-	
 	function valchk() {
 		var pcode=frm.pcode.value;
 		var pname=frm.pname.value;
 		var price=frm.price.value;
 		var pcount=frm.pcount.value;
-		var pcon=frm.pcon.value;
-		var pimage=frm.pimage.value;
 		var explain=frm.explain.value;
 		
-		alert("pcode :"+pcode+"\r\npname : "+pname+"\r\nprice :"+price+"\r\npcount :"+pcount+"\r\npimage :"+pimage+"\r\nexplain :"+explain+
-				"\r\npcon :"+pcon+"\r\n끝");
-		
-		
+		alert("pcode :"+pcode+"\r\npname : "+pname+"\r\nprice :"+price+"\r\npcount :"
+				+pcount+"\r\nexplain :"+explain+
+				"\r\n끝");
 	}
 
 </script>
@@ -237,7 +234,7 @@ String pid = (String)session.getAttribute("id");
     	<tr><th>카테고리 선택</th><td>
             <div class="category_div">
                 <select class="category_select_top" id="Category_top" name="Category_top" 
-                onchange="CategoryChange_top(this)">
+                onchange="CategoryChange_top(this)" required="required">
                   <option>대분류 선택</option>
                   <option value="C" >패션의류/잡화</option>
                   <option value="S">스포츠</option>
@@ -250,7 +247,7 @@ String pid = (String)session.getAttribute("id");
                   <option>중분류 선택</option>
                 </select>
                 <select class="category_select_low" id="Category_low" name="pcode"
-                onchange="CategoryValue(this)">
+                onchange="CategoryValue(this)" required="required">
                     <option>소분류 선택</option>
                   </select>
               </div></td>
@@ -269,7 +266,7 @@ String pid = (String)session.getAttribute("id");
             <td> 
                 <div class="field" align="left" >
                 <span>
-                    <input type="file" id="pimageid" name="pimage" multiple />
+                    <input type="file" id="pimageid" name="pimage[]" multiple />
                 </span>
                 </div>
             </td>

@@ -46,7 +46,7 @@ td {
 <c:if test="${not empty list }">
 	<c:forEach var="pi" items="${list }">
 		<tr>
-		<td><img class="imageThumb" src="productimage/${pi.pimage }"> </td>
+		<td><img class="imageThumb" src="productimage/${pi.pimage }" alt="이미지 없음"></td>
 		<td><a href="productimage/${pi.pimage }">${pi.pcode }</a></td><td>${pi.pid }</td>
 			<td><a href="productimage/${pi.pimage }">${pi.pname}</a></td><td>${pi.price}</td>
 			<td>${pi.pcount}</td>
