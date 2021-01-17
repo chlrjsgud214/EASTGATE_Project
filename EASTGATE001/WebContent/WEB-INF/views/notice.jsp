@@ -26,9 +26,9 @@
 	</c:if>
 </table>
 <div align="center">
-<div style="margin-right: 416px">
+<div style="margin-right: 400px">
 <button onclick="location.href='noticeinsertForm.do'">글쓰기</button>
-<button onclick="location.href='adminMain.do'">메인으로</button>
+<button onclick="location.href='adminpageForm.do'">이전 페이지</button>
 </div>
 <c:if test="${currentPage <= startPage}">
 	<button onclick="location.href='notice.do?pageNum=${startPage-1}'">이전</button>
@@ -47,7 +47,7 @@
 		<button onclick="location.href='notice.do?pageNum=${endPage+1}'">다음</button>
 </c:if>
 </div>
-
+<br>
 <div id="search" align="center">
 		<select id="searchC" name="searchC">
 			<option value="nsubject">제목</option>
