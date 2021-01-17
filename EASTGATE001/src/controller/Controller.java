@@ -76,12 +76,16 @@ public class Controller extends HttpServlet {
 	    	  // request.getContextPath().length()+1 : 6
 		      command = command.substring( // 문자 일부만 추출
 		    		 request.getContextPath().length()+1); 
+		      if(command == null) command = "";
 		      // command : message.do
 	          com = (CommandProcess)commandMap.get(command); 
 	          // com : service.Mesage객체를 CommandProcess로 형변환
 	          // 자식 즉 Message객체의 requestPro()메소드 실행
+//	          System.out.println("뭐가 문제냐");
+//	          System.out.println(command);
 	          view = com.requestPro(request, response);
 	          // view는 "message" 문자
+	          
 	    } catch(Throwable e) { throw new ServletException(e); }
 	    // main.jsp를 실행하는 데 매개변수 pgm에 값을 대입
 	    RequestDispatcher dispatcher =

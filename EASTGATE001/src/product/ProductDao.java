@@ -24,7 +24,7 @@ public class ProductDao {
 				ctx.lookup("java:comp/env/jdbc/OracleDB");
 			conn = ds.getConnection();
 		}catch (Exception e) {
-			System.out.println("연결에러 : "+e.getMessage());
+			System.out.println("연결에러 getconnection : "+e.getMessage());
 		}
 		return conn;
 	}
@@ -37,7 +37,7 @@ public class ProductDao {
 			PreparedStatement pstmt = null;		
 			
 			String sql_pd_insert = "insert into product values(?||lpad(pcode_seq.nextval,3,0)"
-					+ ",?,?,?,?,?,?,?)";
+					+ ",?,?,?,?,?,?)";
 			// 제품 번호 , 판매자 번호, 제품 이름, 가격, 재고수량, 썸네일 이미지, 제품설명
 
 			try {
@@ -45,12 +45,11 @@ public class ProductDao {
 				pstmt = conn.prepareStatement(sql_pd_insert);
 				pstmt.setString(1, pd.getPcode()); // 제품 번호
 				pstmt.setString(2, pd.getPid()); // 판매자 번호
-				pstmt.setString(3, pd.getPname()); // 제품이름
-				pstmt.setInt(4, pd.getPrice()); // 가격
-				pstmt.setInt(5, pd.getPcount()); // 재고수량
-				pstmt.setString(6, pd.getPimage()); // 썸네일
-				pstmt.setString(7, pd.getPcon()); // 제품설명
-				pstmt.setString(8, pd.getExplain()); // 제품설명
+				pstmt.setString(3, pd.getPname()); // 제품이름				
+				pstmt.setString(4, pd.getPimage()); // 썸네일
+				pstmt.setInt(5, pd.getPrice()); // 가격
+				pstmt.setInt(6, pd.getPcount()); // 재고수량
+				pstmt.setString(7, pd.getExplain()); // 제품설명
 				result = pstmt.executeUpdate();
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
@@ -62,7 +61,6 @@ public class ProductDao {
 					if (conn != null)
 						conn.close();
 				} catch (Exception e) {
-					System.out.println(e.getMessage());
 				}
 			}
 			return result;

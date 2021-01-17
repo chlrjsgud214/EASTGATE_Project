@@ -210,11 +210,29 @@ td {
 
 </style>
 <% 
-String id = (String)session.getAttribute("id");
+String pid = (String)session.getAttribute("id");
 %>
+<script type="text/javascript">
+	
+	function valchk() {
+		var pcode=frm.pcode.value;
+		var pname=frm.pname.value;
+		var price=frm.price.value;
+		var pcount=frm.pcount.value;
+		var pcon=frm.pcon.value;
+		var pimage=frm.pimage.value;
+		var explain=frm.explain.value;
+		
+		alert("pcode :"+pcode+"\r\npname : "+pname+"\r\nprice :"+price+"\r\npcount :"+pcount+"\r\npimage :"+pimage+"\r\nexplain :"+explain+
+				"\r\npcon :"+pcon+"\r\n끝");
+		
+		
+	}
+
+</script>
 </head>
 <body>
-	<form name="productForm" action="ProductUpload.do" method="post"
+	<form name="productForm" action="productupload.do" method="post" id="frm" onsubmit="return valchk()"
     enctype="multipart/form-data">
     <table>
     	<tr><th>카테고리 선택</th><td>
@@ -244,7 +262,8 @@ String id = (String)session.getAttribute("id");
         </tr>
         <tr>
 			<th>판매자 ID</th>
-			<td><%=id%></td>
+			<td><%=pid%> <input type="button" name="chk" value="값확인" onclick="valchk()"> </td>
+			
 		</tr>
         <tr>             
             <th>썸네일 이미지</th>  
@@ -268,7 +287,7 @@ String id = (String)session.getAttribute("id");
          <tr>
             <th>설명</th><td><input type="text" name="pcon"> </td>  <td> <input type="text" name="explain"> </td>
         </tr>
-        <tr><th colspan="2"><input type="submit" value="상품 등록"></th></tr>
+        <tr><th colspan="2"><input type="submit" value="상품 등록" ></th></tr>
     </table>
 </form>
 </body>
