@@ -30,17 +30,16 @@ public class ProductAction implements CommandProcess  {
 		String price = StringUtils.nvl(mr.getParameter("price")); 
 		String pcount = StringUtils.nvl(mr.getParameter("pcount"));  
 		String pimage =StringUtils.nvl(mr.getFilesystemName("pimage"));
-		String pcon = StringUtils.nvl(mr.getParameter("pcon"));
 		String explain = StringUtils.nvl(mr.getParameter("explain"));	 
-		
-		System.out.println("pcode"+pcode);
-		System.out.println("pid"+pid);
-		System.out.println("pname"+pname);
-		System.out.println("price"+price);
-		System.out.println("pcount"+pcount);
-		System.out.println("pimage"+pimage);
-		System.out.println("explain"+explain);
-		
+//		
+//		System.out.println("pcode"+pcode);
+//		System.out.println("pid"+pid);
+//		System.out.println("pname"+pname);
+//		System.out.println("price"+price);
+//		System.out.println("pcount"+pcount);
+//		System.out.println("pimage"+pimage);
+//		System.out.println("explain"+explain);
+//		
 		ProductDao pd = ProductDao.getInstance();
 		Product product= new Product();
 		product.setPcode(pcode);						//1
@@ -49,7 +48,7 @@ public class ProductAction implements CommandProcess  {
 		product.setPrice(Integer.parseInt(price));
 		product.setPcount(Integer.parseInt(pcount));
 		product.setPimage(pimage);
-		product.setPcon(explain); //7
+		product.setExplain(explain);
 			
 		result = pd.insert(product);
 			

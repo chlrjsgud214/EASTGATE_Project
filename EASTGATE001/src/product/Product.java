@@ -7,7 +7,6 @@ public class Product {
 	private int price;     // 가격			option
 	private int pcount;    // 재고 수량		product count
 	private String pimage; // 썸네일 이미지 fileimg
-	private String pcon;   // 제품 설명		contents
 	private String explain;
 	
 	
@@ -46,12 +45,6 @@ public class Product {
 	}
 	public void setPimage(String pimage) {
 		this.pimage = pimage;
-	}
-	public String getPcon() {
-		return pcon;
-	}
-	public void setPcon(String pcon) {
-		this.pcon = pcon;
 	}
 	public String getExplain() {
 		return explain;

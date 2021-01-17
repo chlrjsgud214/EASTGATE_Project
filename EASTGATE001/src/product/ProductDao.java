@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.naming.*;
 import javax.sql.DataSource;
-
+import util.StringUtils;
 
 public class ProductDao {
 	private static ProductDao instance = new ProductDao();
@@ -112,16 +112,17 @@ public class ProductDao {
 			try {
 				pstmt = conn.prepareStatement(sql);			
 				rs = pstmt.executeQuery();
+				System.out.println("여기서 됨2");
 				while (rs.next()) {
 					 Product pdt= new Product();
-		             pdt.setPcode(rs.getString("pcode")); // 제품 번호
-		             pdt.setPid(rs.getString("pid")); // 판매자 번호
-		             pdt.setPname(rs.getString("pname")); // 제품이름
+		             pdt.setPcode(StringUtils.nvl(rs.getString("pcode"))); // 제품 번호
+		             pdt.setPid(StringUtils.nvl(rs.getString("pid"))); // 판매자 번호
+		             pdt.setPname(StringUtils.nvl(rs.getString("pname"))); // 제품이름
 		             pdt.setPrice(rs.getInt("price")); // 가격
 		             pdt.setPcount(rs.getInt("pcount")); // 재고수량
-		             pdt.setPimage(rs.getString("pimage")); // 썸네일
-		             pdt.setPcon(rs.getString("pcon")); // 제품설명
-		                 
+		             pdt.setPimage(StringUtils.nvl(rs.getString("image"))); // 썸네일
+		             pdt.setExplain(StringUtils.nvl(rs.getString("explain"))); // 제품설명
+		             System.out.println("여기서 됨1");    
 		             list.add(pdt);
 				}
 			}catch (Exception e) {
@@ -164,9 +165,9 @@ public class ProductDao {
 	             pdt.setPid(rs.getString("pid")); // 판매자 번호
 	             pdt.setPname(rs.getString("pname")); // 제품이름
 	             pdt.setPrice(rs.getInt("price")); // 가격
-	             pdt.setPcount(rs.getInt("pcount")); // 재고수량
 	             pdt.setPimage(rs.getString("pimage")); // 썸네일
-	             pdt.setPcon(rs.getString("pcon")); // 제품설명
+	             pdt.setPcount(rs.getInt("pcount")); // 재고수량	             
+	             pdt.setExplain(rs.getString("explain")); // 제품설명
 	                 
 	             productList.add(pdt);
 	    	}
@@ -197,7 +198,7 @@ public class ProductDao {
 			          pdt.setPrice(rs.getInt("price")); // 가격
 			          pdt.setPcount(rs.getInt("pcount")); // 재고수량
 			          pdt.setPimage(rs.getString("pimage")); // 썸네일
-			          pdt.setPcon(rs.getString("pcon")); // 제품설명
+			          pdt.setExplain(rs.getString("explain")); // 제품설명
 				}
 			}catch(Exception e){System.out.println(e.getMessage());
 			}finally {

@@ -6,7 +6,7 @@
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
 		alert("업로드 성공");
-		location.href= "list.action";
+		location.href= "productlist.do";
 	</script>
 </c:if>
 <c:if test="${result == 0 }">

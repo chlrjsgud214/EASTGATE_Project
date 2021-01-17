@@ -1,5 +1,4 @@
-<%@page import="member.MemberDao"%>
-<%@page import="member.Member"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="sessionChk.jsp" %>
@@ -84,7 +83,7 @@
                     $("<span class=\"pip\">" +
                     "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
                     "<br/><span class=\"remove\">이미지 삭제</span>" +
-                    "</span>").insertAfter("#pimage");
+                    "</span>").insertAfter("#pimageid");
                         $(".remove").click(function(){
                             $(this).parent(".pip").remove();
                         });          
@@ -285,7 +284,7 @@ String pid = (String)session.getAttribute("id");
             <th>제품 설명</th>  <td ><div id="productnote" ></div> </td> 
         </tr>
          <tr>
-            <th>설명</th><td><input type="text" name="pcon"> </td>  <td> <input type="text" name="explain"> </td>
+            <th>설명</th><td> <input type="text" name="explain"> </td>
         </tr>
         <tr><th colspan="2"><input type="submit" value="상품 등록" ></th></tr>
     </table>
