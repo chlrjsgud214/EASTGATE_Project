@@ -34,7 +34,9 @@ td {
 }
 </style>
 </head><body>
-<h2>파일 목록</h2>
+<h1 align="center">
+							<a href="main.do"><img alt="" src="image/logo7.png"></a>
+						</h1>
 <table>
 	<tr><th>썸네일</th><th>제품코드</th><th>판매자아이디</th>
 	<th>제품제목</th><th>가격</th>

@@ -191,7 +191,7 @@ function CategoryValue(e) { // 카테고리 코드 보내기
 h2 {
 	text-align: center;
 }
-form {margin: 100px 0;}
+form {margin: 5px 0;}
 table {margin: auto;
 		width:800px; 
 }
@@ -213,8 +213,10 @@ td {
 .pname{
 	width:100%; 
 }
+
 </style>
-<% 
+
+<%          // id 값 불러오기 
 String pid = (String)session.getAttribute("id");
 
 %>
@@ -234,6 +236,9 @@ String pid = (String)session.getAttribute("id");
 </script>
 </head>
 <body>
+<h1 align="center">
+							<a href="main.do"><img alt="" src="image/logo7.png"></a>
+						</h1>
 	<form name="productForm" action="productupload.do" method="post" id="frm" onsubmit="return valchk()"
     enctype="multipart/form-data">
     <table>
@@ -287,7 +292,7 @@ String pid = (String)session.getAttribute("id");
             <th>제품 설명</th>  <td ><div id="productnote" ></div> </td> 
         </tr>-->
          <tr>
-            <th>제품 설명</th><td> <textarea rows="40" cols="100" name="explain"></textarea> </td>
+            <th>제품 설명</th><td> <textarea rows="30" cols="100" name="explain"></textarea> </td>
         </tr>
         <tr><th colspan="2"><input type="submit" value="상품 등록" ></th></tr>
     </table>
