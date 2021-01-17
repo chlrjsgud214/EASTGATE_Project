@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style type="text/css">@import url("css/form.css");</style>
 <title>Insert title here</title>
 </head>
 <body>
@@ -14,6 +15,8 @@
 		<tr><td><a href='#'>Q&A 관리</a></td></tr>
 		<tr><td><a href='#'>회원 관리</a></td></tr>
 	</table>
-	<button><a href='adminMain.do'>메인</a></button>
+<div align="center">
+	<button onclick="location.href='adminMain.do'">메인</a></button>
+</div>
 </body>
 </html>

@@ -247,7 +247,7 @@
 					<li><a href="#">Q&A</a></li>
 					<li><a href="#">FAQ</a></li>
 					<li><a href="#">상품후기</a></li>
-					<li><a href="#">공지사항</a></li>
+					<li><a href="mnotice.do">공지사항</a></li>
 				</ul>
 			</div> <!-- .container end -->
 		</div> <!-- .footer_menu end -->

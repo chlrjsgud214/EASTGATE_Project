@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import admin.Admin;
-import admin.AdminDao;
 import member.Member;
 import member.MemberDao;
 import util.StringUtils;
@@ -24,11 +22,11 @@ public class LoginAction implements CommandProcess {
 
 		HttpSession session = request.getSession();
 		if (id.equals("master")) {
-			AdminDao ad = AdminDao.getInstance();
-			Admin admin = ad.adminChk(id);
-			if (password.equals(admin.getPass())) {
+			MemberDao md = MemberDao.getInstance();
+			Member member = md.select(id);
+			if (password.equals(member.getPassword())) {
 				result = 1;
-				session.setAttribute("admin", admin);
+				session.setAttribute("member", member);
 			} else {
 				result = -2;
 			}

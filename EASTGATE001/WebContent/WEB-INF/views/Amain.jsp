@@ -24,7 +24,6 @@
 						</a>
 					</h1>
 					<ul class="util">
-						<li><a href="#">상품등록</a></li>
 						<li><a href="adminpageForm.do">관리자 페이지</a></li>
 						<li><a href="logout.do">로그아웃</a></li>
 					</ul>
@@ -245,7 +244,7 @@
 					<li><a href="#">Q&A</a></li>
 					<li><a href="#">FAQ</a></li>
 					<li><a href="#">상품후기</a></li>
-					<li><a href="#">공지사항</a></li>
+					<li><a href="notice.do">공지사항</a></li>
 				</ul>
 			</div> <!-- .container end -->
 		</div> <!-- .footer_menu end -->
