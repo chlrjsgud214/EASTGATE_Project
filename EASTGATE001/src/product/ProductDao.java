@@ -112,7 +112,6 @@ public class ProductDao {
 			try {
 				pstmt = conn.prepareStatement(sql);			
 				rs = pstmt.executeQuery();
-				System.out.println("여기서 됨2");
 				while (rs.next()) {
 					 Product pdt= new Product();
 		             pdt.setPcode(StringUtils.nvl(rs.getString("pcode"))); // 제품 번호
@@ -122,7 +121,6 @@ public class ProductDao {
 		             pdt.setPcount(rs.getInt("pcount")); // 재고수량
 		             pdt.setPimage(StringUtils.nvl(rs.getString("image"))); // 썸네일
 		             pdt.setExplain(StringUtils.nvl(rs.getString("explain"))); // 제품설명
-		             System.out.println("여기서 됨1");    
 		             list.add(pdt);
 				}
 			}catch (Exception e) {
