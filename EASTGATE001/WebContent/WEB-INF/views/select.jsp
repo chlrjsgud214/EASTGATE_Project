@@ -32,7 +32,8 @@
 			<td>${member.email }</td>
 		</tr>
 		<tr>
-			<td colspan="2"><a href="updateForm.do">회원정보수정</a></td>
+			<td colspan="2"><input type="button" onclick="location.href='updateForm.do'" value="회원정보수정">
+				<input type="button" onclick="location.href='mmain.do'" value="메인으로"></td>
 		</tr>
 	</table>
 </body>

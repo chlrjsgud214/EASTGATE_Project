@@ -4,10 +4,10 @@
 <configuration>
 	<properties resource="db.properties" />
 	<typeAliases>
-		<typeAlias alias="admin" type="admin.Admin" />
 		<typeAlias alias="member" type="member.Member" />
 		<typeAlias alias="cart" type="cart.Cart" />
 		<typeAlias alias="orders" type="orders.Orders" />
+		<typeAlias alias="notice" type="notice.Notice" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -21,9 +21,9 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="Admin.xml" />
 		<mapper resource="member.xml" />
 		<mapper resource="cart.xml"/>
 		<mapper resource="orders.xml"/>
+		<mapper resource="Notice.xml"/>
 	</mappers>
 </configuration>

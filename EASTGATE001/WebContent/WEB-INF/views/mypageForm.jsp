@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">@import url("css/form.css");</style>
 </head>
 <body>
 <h2>마이페이지</h2>
