@@ -37,8 +37,9 @@
                  ]
   });
 });
-</script>
+</script> 
 
+<!-- 이미지 미리보기 스타일 -->
     <style>
     input[type="file"] {
         display: block;
@@ -68,7 +69,7 @@
       }
 </style>   
 
-<script type="text/javascript">
+<script type="text/javascript"> // 이미지 미리보기 스크랩
     $(document).ready(function() {
         if (window.File && window.FileList && window.FileReader) {
             $("#pimageid").on("change", function(e) {
@@ -183,7 +184,10 @@ function CategoryValue(e) { // 카테고리 코드 보내기
     document.getElementById('pcode').value=cval;
 }
    </script>
-<style>
+   
+   
+ <!-- 기본 폼 스타일 -->
+<style> 
 h2 {
 	text-align: center;
 }
@@ -206,22 +210,24 @@ td {
 	color: #f56642;
 	font-weight: bold;
 }
-
+.pname{
+	width:100%; 
+}
 </style>
 <% 
 String pid = (String)session.getAttribute("id");
 
 %>
-<script type="text/javascript">
+<script type="text/javascript"> // 값 확인 
 	function valchk() {
 		var pcode=frm.pcode.value;
 		var pname=frm.pname.value;
 		var price=frm.price.value;
 		var pcount=frm.pcount.value;
 		var explain=frm.explain.value;
-		
+		var pimage=frm.pimage.value;
 		alert("pcode :"+pcode+"\r\npname : "+pname+"\r\nprice :"+price+"\r\npcount :"
-				+pcount+"\r\nexplain :"+explain+
+				+pcount+"\r\nexplain :"+explain+"\r\n 이미지 : "+pimage+
 				"\r\n끝");
 	}
 
@@ -252,9 +258,9 @@ String pid = (String)session.getAttribute("id");
                   </select>
               </div></td>
         </tr>
-        <tr>
-            <th>제목</th><td><input type="text" name="pname"
-            required="required" autofocus="autofocus"></td>
+        <tr >
+            <th>제목</th><td ><input type="text" name="pname" class="pname"
+           	required="required" autofocus="autofocus"></td>
         </tr>
         <tr>
 			<th>판매자 ID</th>
@@ -266,22 +272,22 @@ String pid = (String)session.getAttribute("id");
             <td> 
                 <div class="field" align="left" >
                 <span>
-                    <input type="file" id="pimageid" name="pimage[]" multiple />
+                    <input type="file" id="pimageid" name="pimage" />
                 </span>
                 </div>
             </td>
         </tr>
         <tr>
-            <th>가격</th><td><input type="text" name="price" required="required"></td>
+            <th>가격</th><td><input type="text" name="price" required="required">원</td>
         </tr>
          <tr>
-            <th>재고수량</th><td><input type="text" name="pcount" required="required"></td>
+            <th>재고수량</th><td><input type="text" name="pcount" required="required">개</td>
         </tr>
-        <tr>
+        <!-- <tr>
             <th>제품 설명</th>  <td ><div id="productnote" ></div> </td> 
-        </tr>
+        </tr>-->
          <tr>
-            <th>설명</th><td> <input type="text" name="explain"> </td>
+            <th>제품 설명</th><td> <textarea rows="40" cols="100" name="explain"></textarea> </td>
         </tr>
         <tr><th colspan="2"><input type="submit" value="상품 등록" ></th></tr>
     </table>
