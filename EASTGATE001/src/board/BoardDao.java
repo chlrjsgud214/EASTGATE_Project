@@ -32,6 +32,10 @@ public class BoardDao {
 				+ "select * from board order by ref desc,re_step)a) "
 				+ " where rn between ? and ?";
 		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Board board = new Board();
 				board.setId(rs.getString("id"));
