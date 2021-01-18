@@ -11,7 +11,7 @@
 </c:if>
 <c:if test="${result == 0 }">
 	<script type="text/javascript">
-		alert("에효 실패");
+		alert("등록 실패");
 		history.go(-1);
 	</script>
 </c:if>
