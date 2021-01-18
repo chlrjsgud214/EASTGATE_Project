@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/board.css">
 </head>
 <body>
 <form action="binsert.do" method="post">
@@ -14,7 +15,7 @@
 	<input type="hidden" name="re_level" value="${re_level}">
 	<input type="hidden" name="re_step" value="${re_step}">
 	<input type="hidden" name="pageNum" value="${pageNum}">
-	<h2>게시글 작성</h2>
+	<h2>Q&A 작성</h2>
 <table>
 <c:if test="${num == 0 }">
 	<tr>

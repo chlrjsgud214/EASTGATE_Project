@@ -1,0 +1,9 @@
+h2 { text-align: center;}
+body {background-color: #eee;}
+table {width: 70%;margin: auto;border:solid 1px #red;}
+th {background-color: #333; padding: 10px; color: #FFF;}
+td {padding: 10px;
+	background-color: #fff;
+}
+.l-th {background-color: #eee;}
+.gesi {background-color: #fff; font-weight: bold;}

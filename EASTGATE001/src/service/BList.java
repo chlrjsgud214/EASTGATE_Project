@@ -31,7 +31,7 @@ public class BList implements CommandProcess {
 		request.setAttribute("totalPage", totalPage);
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
-		return "list";
+		return "blist";
 	}
 	
 }

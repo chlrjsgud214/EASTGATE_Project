@@ -58,3 +58,17 @@ CREATE TABLE orders (
     odate VARCHAR2(15) NOT NULL,
 	odel varchar2(1) NOT NULL	 
 );
+
+
+drop table board;
+CREATE TABLE board (
+	id CONSTRAINT board_id_fk REFERENCES member(id), 
+	num NUMBER NOT NULL,   
+	subject varchar2(100) NOT NULL,         
+	content varchar2(3000) NOT NULL,    
+    bdate DATE,
+    ref NUMBER,
+    re_step NUMBER,
+    re_level NUMBER,
+    readcount NUMBER NOT NULL
+);
