@@ -5,7 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("css/form.css");</style>
+<style type="text/css">
+h2 {
+	text-align: center;
+}
+table {margin: auto;margin-top:40px;
+		width:90%; 
+}
+
+th {
+	padding:10px;
+	background: #333; color: #fff;
+}
+td {
+	padding: 10px; background: #777;
+}
+</style>
 </head>
 <body>
 <div align="center">

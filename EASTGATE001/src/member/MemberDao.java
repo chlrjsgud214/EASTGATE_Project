@@ -2,6 +2,8 @@ package member;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -45,6 +47,13 @@ public class MemberDao {
 		
 		return session.update("members.delete", id);
 	}
-
+	
+	
+	public List<Member> mselect(Map<String, Integer> map) {
+		return session.selectList("members.mselect", map);
+	}
+	public int total() {
+		return (int) session.selectOne("members.total");
+	}
 
 }

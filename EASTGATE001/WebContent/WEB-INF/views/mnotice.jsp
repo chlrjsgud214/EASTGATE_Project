@@ -6,7 +6,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">@import url("css/form.css");</style>
+<style type="text/css">
+a {
+	text-decoration: none;
+	color: black;
+}
+h2 {
+	text-align: center;
+}
+table {margin: auto;margin-top:40px;
+		width:90%; 
+}
+
+th {
+	padding:10px;
+	background: #333; color: #fff;
+}
+td {
+	padding: 10px; background: #777;
+}
+</style>
 </head>
 <body>
 <h2>공지사항</h2>
@@ -26,7 +45,7 @@
 	</c:if>
 </table>
 <div align="center">
-<div style="margin-right: 476px">
+<div style="margin-right: 85%">
 <button onclick="location.href='mmain.do'">메인으로</button>
 </div>
 

@@ -13,5 +13,12 @@
 	</update> 
 	<update id="delete" parameterType="string">
 		update member set del='y' where id=#{id}
-	</update> 
+	</update>
+	
+	<select id="mselect" resultType="Member" parameterType="map">
+		select * from member order by id desc
+	</select>
+	<select id="total" resultType="int">
+		select count(*) from member
+	</select>
 </mapper>

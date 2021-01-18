@@ -33,7 +33,7 @@
 		</tr>
 		<tr>
 			<td colspan="2"><input type="button" onclick="location.href='updateForm.do'" value="회원정보수정">
-				<input type="button" onclick="location.href='mmain.do'" value="메인으로"></td>
+				<input type="button" onclick="location.href='mypageForm.do'" value="이전"></td>
 		</tr>
 	</table>
 </body>
