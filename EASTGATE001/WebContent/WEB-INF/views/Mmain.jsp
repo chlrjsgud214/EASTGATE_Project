@@ -245,7 +245,7 @@
 					<li><a href="#">이용약관</a></li>
 					<li><a href="#">개인정보취급방침</a></li>
 					<li><a href="#">제휴문의</a></li>
-					<li><a href="#">Q&A</a></li>
+					<li><a href="blist.do">Q&A</a></li>
 					<li><a href="#">FAQ</a></li>
 					<li><a href="#">상품후기</a></li>
 					<li><a href="mnotice.do">공지사항</a></li>
