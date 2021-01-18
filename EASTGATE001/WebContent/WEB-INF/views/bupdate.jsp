@@ -10,13 +10,13 @@
 <body>
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
-		alert("게시글이 생성되었습니다.");
-		location.href="blist.do?pageNum=${pageNum}";
+		alert("수정되었습니다.");
+		location.href="bcontent.do?num={board.num}&pageNum=${pageNum}"
 	</script>
 </c:if>
 <c:if test="${result == 0 }">
 	<script type="text/javascript">
-		alert("다시 입력해주세요");
+		alert("다시 수정하세요");
 		history.go(-1);
 	</script>
 </c:if>

@@ -32,6 +32,10 @@ public class BoardDao {
 				+ "select * from board order by ref desc,re_step)a) "
 				+ " where rn between ? and ?";
 		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Board board = new Board();
 				board.setId(rs.getString("id"));
@@ -43,7 +47,6 @@ public class BoardDao {
 			    board.setRe_step(rs.getInt("re_step"));
 			    board.setRe_level(rs.getInt("re_level"));
 			    board.setReadcount(rs.getInt("readcount"));
-			    board.setDel(rs.getString("del"));
 			    list.add(board);
 			}
 		} catch (Exception e) {
@@ -101,7 +104,6 @@ public class BoardDao {
 			    board.setRe_step(rs.getInt("re_step"));
 			    board.setRe_level(rs.getInt("re_level"));
 			    board.setReadcount(rs.getInt("readcount"));
-			    board.setDel(rs.getString("del"));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -113,6 +115,109 @@ public class BoardDao {
 			} catch (Exception e) {	}
 		}
 		return board;
+	}
+	public int insert(Board board) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sqlNum = "select nvl(max(num),0)+1 from board";
+		String sqlUp = "update board set re_step=re_step+1 "
+				+ "where ref=? and re_step >?";
+		String sql = "insert into board "
+				+ "values(?,?,?,?,sysdate,?,?,?,0)";
+		try {
+			pstmt = conn.prepareStatement(sqlNum);
+			rs = pstmt.executeQuery();
+			rs.next();
+			int number = rs.getInt(1);
+			rs.close(); pstmt.close();
+			if (board.getNum() > 0) {
+				pstmt = conn.prepareStatement(sqlUp);
+				pstmt.setInt(1, board.getRef());
+				pstmt.setInt(2, board.getRe_step());
+				pstmt.executeUpdate();
+				board.setRe_level(board.getRe_level()+1);
+				board.setRe_step(board.getRe_step()+1);
+				pstmt.close();
+			} else board.setRef(number);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getId());
+			pstmt.setInt(2, number);
+			pstmt.setString(3, board.getSubject());
+			pstmt.setString(4, board.getContent());
+			pstmt.setInt(5, board.getRef());
+			pstmt.setInt(6, board.getRe_step());
+			pstmt.setInt(7, board.getRe_level());
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e) {}
+		}
+		return result;
+	}
+	public int update(Board board) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "update board set subject=?, content=? where num=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getSubject());
+			pstmt.setString(2, board.getContent());
+			pstmt.setInt(3, board.getNum());
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e) {	}
+		}
+		return result;
+	}
+	public void updateReadCount(int num) {
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "update board set readcount=readcount+1 where num=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e) {	}
+		}
+		
+	}
+	public int delete(int num) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql="delete from board where num=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e) {	}
+		}
+		return result;
 	}
 	
 }

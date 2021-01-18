@@ -10,7 +10,6 @@ public class Board {
     private int re_step;
     private int re_level;
     private int readcount;
-    private String del;
 	public String getId() {
 		return id;
 	}
@@ -64,11 +63,5 @@ public class Board {
 	}
 	public void setReadcount(int readcount) {
 		this.readcount = readcount;
-	}
-	public String getDel() {
-		return del;
-	}
-	public void setDel(String del) {
-		this.del = del;
 	}
 }
