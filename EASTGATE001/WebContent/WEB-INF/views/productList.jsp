@@ -37,8 +37,9 @@ td.fileupload{
 </style>
 </head><body>
 <h1 align="center">
-							<a href="main.do"><img alt="" src="image/logo7.png"></a>
-						</h1>
+<a href="main.do"><img alt="" src="image/logo7.png"></a>
+</h1>
+<form action="productShow.do" method="post">
 <table>
 <tr> <td class="fileupload" colspan="7" align="right"> <button onclick="location.href='productForm.do'">파일 업로드</button> </td> </tr> 
 	<tr><th>썸네일</th><th>제품코드</th><th>판매자아이디</th>
@@ -52,8 +53,9 @@ td.fileupload{
 	<c:forEach var="pi" items="${list }">
 		<tr>
 		<td><a href="productimage/${pi.pimage }"><img class="imageThumb" src="productimage/${pi.pimage }" alt="이미지 없음" ></a></td>
-		<td><a href="productimage/${pi.pimage }">${pi.pcode }</a></td><td>${pi.pid }</td>
-			<td><a href="productimage/${pi.pimage }">${pi.pname}</a></td><td>${pi.price}</td>
+		
+		<td><a href="productShowAction.jsp">${pi.pcode }</a></td><td>${pi.pid }</td>
+			<td><a href="productShow.do?pcode=${pi.pcode }">${pi.pname}</a></td><td>${pi.price}</td>
 			<td>${pi.pcount}</td>
 			<td>${pi.explain}</td>
 			</tr>
@@ -61,6 +63,6 @@ td.fileupload{
 </c:if>
 <tr> <td class="fileupload" colspan="7" align="right">  <button onclick="location.href='productForm.do'">파일 업로드</button> </td> </tr> 
 </table>
-
+</form>
 </body>
 </html>
