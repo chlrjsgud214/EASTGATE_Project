@@ -80,13 +80,15 @@ function change () {
 </script>
 </head>
 <body>
+<h1 align="center">
+<a href="main.do"><img alt="" src="image/logo7.png"></a>
+</h1>
     <form name="productShowForm" action="cartInsert.do" method="post" >
         <table>
         	<tr> 
         		<td class="fileupload" colspan="7" align="right"> <button onclick="cartInsert.do?pcode=${product.pcode }">구매하기</button>
          		<input type="text" name="amount" value="1" size="3" onchange="change();">
-				<input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();">  
-				     
+				<input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();">  				     
             	<button type="submit" >장바구니 담기</button> </td> 
            	</tr>
             <tr>
