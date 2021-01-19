@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="css/board.css">
 </head>
 <body>
+<%String pid = (String)session.getAttribute("id");%>
 <h2>Q&A</h2>
 <table>
 	<tr>
@@ -34,7 +35,7 @@
 	<c:if test="${board.readcount > 50}">
 		<img alt="" src="images/hot.gif">
 	</c:if></td>
-	<td>${board.id}</td>
+	<td><%=pid %></td>
 	<td>${board.readcount}</td>
 	<td>${board.bdate}</td></tr>
 </c:forEach>

@@ -19,7 +19,7 @@
 			<div class="top_header">
 				<div class="container">
 					<h1>
-						<a href="index.jsp"> <span class="blind">EAST-GATE</span> <img
+						<a href="mmain.do"> <span class="blind">EAST-GATE</span> <img
 							alt="" src="image/logo7.png">
 						</a>
 					</h1>
@@ -241,10 +241,6 @@
 		<div class="footer_menu">
 			<div class="container">
 				<ul>
-					<li><a href="#">회사소개</a></li>
-					<li><a href="#">이용약관</a></li>
-					<li><a href="#">개인정보취급방침</a></li>
-					<li><a href="#">제휴문의</a></li>
 					<li><a href="blist.do">Q&A</a></li>
 					<li><a href="#">FAQ</a></li>
 					<li><a href="#">상품후기</a></li>

@@ -61,7 +61,8 @@ td.fileupload{
 			</tr>
 	</c:forEach>
 </c:if>
-<tr> <td class="fileupload" colspan="7" align="right">  <button onclick="location.href='productForm.do'">파일 업로드</button> </td> </tr> 
+<tr> <td class="fileupload" colspan="7" align="right">  <button onclick="location.href='productForm.do'">파일 업로드</button>
+<button onclick="location.href='cartInsert.do'">장바구니 담기</button></td> </tr> 
 </table>
 </form>
 </body>
