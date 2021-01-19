@@ -81,7 +81,7 @@ function change () {
 </head>
 <body>
 <h1 align="center">
-<a href="main.do"><img alt="" src="image/logo7.png"></a>
+<a href="mmain.do"><img alt="" src="image/logo7.png"></a>
 </h1>
     <form name="productShowForm" action="cartInsert.do" method="post" >
         <table>

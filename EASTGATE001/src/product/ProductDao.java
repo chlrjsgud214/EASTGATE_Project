@@ -224,12 +224,12 @@ public class ProductDao {
 		}
 		public String selectPimage(String pcode) {
 			String pimage = null;
-			String sql = "select pimage from product where pcode=?";
+			String sql = "select image from product where pcode=?";
 			try {
 			Connection conn = getConnection(); 	
 			PreparedStatement pstmt = conn.prepareStatement(sql);	
 			ResultSet rs = pstmt.executeQuery();
-			pimage = rs.getString(pimage);
+			pimage = rs.getString("image");
 			rs.close(); pstmt.close(); conn.close();
 			} catch(Exception e) {
 				
