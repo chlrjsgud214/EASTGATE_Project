@@ -2,7 +2,7 @@
  * 
  */
 $(function() {
-		$('.gnb>li').hover(function() {
+		/*$('.gnb>li').hover(function() {
 			$(this).children('ul', 'ul ul li').slideDown()
 		}, function() {
 			$('.gnb ul').hide()
@@ -15,7 +15,7 @@ $(function() {
 			case 'left_btn' : main_left(); break;
 			case 'right_btn' : main_right(); 
 		}
-		})
+		})*/
 	
 		function main_left() {
 			$('.slider').animate({'margin-left' : -1020}, function() {
