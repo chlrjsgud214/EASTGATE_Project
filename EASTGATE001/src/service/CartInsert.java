@@ -21,7 +21,8 @@ public class CartInsert implements CommandProcess {
 		
 		String image = pd.selectPimage(pcode);
 		int price = pd.selectPrice(pcode);
-		int ocount = Integer.parseInt(request.getParameter("ocount"));
+		String ocount = request.getParameter("amount");
+		System.out.println(ocount);
 		String id = session.getId();
 		
 		CartDao cd = CartDao.getInstance();	
@@ -32,7 +33,7 @@ public class CartInsert implements CommandProcess {
 			cart.setPname(pname);
 			cart.setImage(image);
 			cart.setPrice(price);
-			cart.setOcount(ocount);
+			cart.setOcount(Integer.parseInt(ocount));
 			result = cd.insert(cart);
 	
 		request.setAttribute("result", result);
