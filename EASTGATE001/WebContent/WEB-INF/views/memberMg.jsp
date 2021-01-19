@@ -9,21 +9,25 @@
 <style type="text/css">
 a {
 	text-decoration: none;
-	color:black;
+	color: black;
+}
+.b {
+	background-color: white;
 }
 h2 {
 	text-align: center;
 }
 table {margin: auto;margin-top:40px;
-		width:90%; 
+		width:72%; 
+		text-align: center;
 }
 
 th {
-	padding:10px;
+	padding:9px;
 	background: #333; color: #fff;
 }
 td {
-	padding: 10px; background: #777;
+	padding: 7px; background: #777;
 }
 </style>
 </head>
@@ -45,11 +49,10 @@ td {
 					<td>${m.del}</td></tr>
 			</c:forEach>
 	</c:if>
+	<tr align="left">
+		<td colspan="6" class="b"><button onclick="location.href='adminpageForm.do'">이전 페이지</button></td></tr>
 </table>
 <div align="center">
-<div style="margin-right: 84%">
-	<button onclick="location.href='adminpageForm.do'">이전 페이지</button>
-</div>
 
 <c:if test="${currentPage <= startPage}">
 	<button onclick="location.href='notice.do?pageNum=${startPage-1}'">이전</button>

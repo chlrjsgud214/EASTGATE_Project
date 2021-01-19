@@ -11,19 +11,22 @@ a {
 	text-decoration: none;
 	color: black;
 }
+.b {
+	background-color: white;
+}
 h2 {
 	text-align: center;
 }
 table {margin: auto;margin-top:40px;
-		width:90%; 
+		width:72%; 
 }
 
 th {
-	padding:10px;
+	padding:9px;
 	background: #333; color: #fff;
 }
 td {
-	padding: 10px; background: #777;
+	padding: 7px; background: #777;
 }
 </style>
 </head>
@@ -43,12 +46,10 @@ td {
 				<td>${n.ncount }</td></tr>
 		</c:forEach>
 	</c:if>
+	<tr align="left">
+		<td colspan="4" class="b"><button onclick="location.href='mmain.do'">메인으로</button></td></tr>
 </table>
 <div align="center">
-<div style="margin-right: 85%">
-<button onclick="location.href='mmain.do'">메인으로</button>
-</div>
-
 <c:if test="${currentPage <= startPage}">
 	<button onclick="location.href='mnotice.do?pageNum=${startPage-1}'">이전</button>
 </c:if>

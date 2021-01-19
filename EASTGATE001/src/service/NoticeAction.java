@@ -22,7 +22,7 @@ public class NoticeAction implements CommandProcess {
 		}
 		int currentPage = Integer.parseInt(pageNum);
 		int startRow = (currentPage-1)*rowPerPage + 1;
-		int endRow = startRow + rowPerPage - 1;
+		int endRow = currentPage * rowPerPage;
 		
 		Map<String, Integer> map=new HashMap<String, Integer>();
 		map.put("startRow", startRow);

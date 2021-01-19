@@ -190,7 +190,7 @@
 					<div class="slider_wrap">
 						<div class="slider">
 							<ul>
-								<li><img src="image/visual1.png" alt="후기쓰고 상품 받자"></li>
+								<li><img src="image/222.jpg" alt="후기쓰고 상품 받자"></li>
 								<li><img src="image/visual2.png" alt="후기쓰고 상품 받자"></li>
 								<li><img src="image/visual3.png" alt="후기쓰고 상품 받자"></li>
 							</ul>
@@ -209,17 +209,17 @@
 					<div class="contents">
 						<div class="box">
 							<ul>
-								<li><a href="#"><img src="image/1.jpg" alt="#"> <span
-										class="txt_name">상품명1</span> <span class="txt_price">가격</span>
+								<li><a href="#"><img src="image/product1.jpg" alt="#"> <span
+										class="txt_name">서귀포 명품 레드향 1박스  2kg</span> <span class="txt_price">21,900원</span>
 								</a></li>
-								<li><a href="#"><img src="image/2.jpg" alt="#"> <span
-										class="txt_name">상품명2</span> <span class="txt_price">가격</span>
+								<li><a href="#"><img src="image/product2.jpg" alt="#"> <span
+										class="txt_name">충남 대추 방울토마토 1박스 1kg</span> <span class="txt_price">11,900원</span>
 								</a></li>
-								<li><a href="#"><img src="image/3.jpg" alt="#"> <span
-										class="txt_name">상품명3</span> <span class="txt_price">가격</span>
+								<li><a href="#"><img src="image/product3.jpg" alt="#"> <span
+										class="txt_name">아이패드 10.2 8세대 32GB</span> <span class="txt_price">449,000원</span>
 								</a></li>
-								<li><a href="#"><img src="image/4.jpg" alt="#"> <span
-										class="txt_name">상품명4</span> <span class="txt_price">가격</span>
+								<li><a href="#"><img src="image/product4.jpg" alt="#"> <span
+										class="txt_name">기능성 9부 슬랙스 1종</span> <span class="txt_price">19,800원</span>
 								</a></li>
 							</ul>
 						</div>
@@ -237,17 +237,17 @@
 					<div class="contents">
 						<div class="box">
 							<ul>
-								<li><a href="#"><img src="image/1.jpg" alt="#"> <span
-										class="txt_name">상품명1</span> <span class="txt_price">가격</span>
+								<li><a href="#"><img src="image/product5.jpg" alt="#"> <span
+										class="txt_name">프리미엄 1++ 한우 3.6kg</span> <span class="txt_price">990,000원</span>
 								</a></li>
-								<li><a href="#"><img src="image/2.jpg" alt="#"> <span
-										class="txt_name">상품명2</span> <span class="txt_price">가격</span>
+								<li><a href="#"><img src="image/product6.jpg" alt="#"> <span
+										class="txt_name">글레이즈드 도넛 10개입</span> <span class="txt_price">7.980원</span>
 								</a></li>
-								<li><a href="#"><img src="image/3.jpg" alt="#"> <span
-										class="txt_name">상품명3</span> <span class="txt_price">가격</span>
+								<li><a href="#"><img src="image/product7.jpg" alt="#"> <span
+										class="txt_name">꼬북침 초코&인절미 4봉</span> <span class="txt_price">9,980원</span>
 								</a></li>
-								<li><a href="#"><img src="image/4.jpg" alt="#"> <span
-										class="txt_name">상품명4</span> <span class="txt_price">가격</span>
+								<li><a href="#"><img src="image/product8.jpg" alt="#"> <span
+										class="txt_name">비비고 인기상품 8종</span> <span class="txt_price">29,450원</span>
 								</a></li>
 							</ul>
 						</div>

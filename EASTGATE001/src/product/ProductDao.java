@@ -163,7 +163,7 @@ public class ProductDao {
 	             pdt.setPid(rs.getString("pid")); // 판매자 번호
 	             pdt.setPname(rs.getString("pname")); // 제품이름
 	             pdt.setPrice(rs.getInt("price")); // 가격
-	             pdt.setPimage(rs.getString("pimage")); // 썸네일
+	             pdt.setPimage(rs.getString("image")); // 썸네일
 	             pdt.setPcount(rs.getInt("pcount")); // 재고수량	             
 	             pdt.setExplain(rs.getString("explain")); // 제품설명
 	                 
@@ -195,8 +195,8 @@ public class ProductDao {
 			          pdt.setPname(rs.getString("pname")); // 제품이름
 			          pdt.setPrice(rs.getInt("price")); // 가격
 			          pdt.setPcount(rs.getInt("pcount")); // 재고수량
-			          pdt.setPimage(rs.getString("pimage")); // 썸네일
-			          pdt.setExplain(rs.getString("explain")); // 제품설명
+			          pdt.setPimage(rs.getString("image")); // 썸네일
+			          pdt.setExplain(StringUtils.nvl(rs.getString("explain"))); // 제품설명
 				}
 			}catch(Exception e){System.out.println(e.getMessage());
 			}finally {
@@ -206,6 +206,51 @@ public class ProductDao {
 				}catch (Exception e) {		}
 			}
 			return pdt;
+		}
+		public String selectPname(String pcode) {
+			String pname = null;
+			String sql = "select pname from product where pcode=?";
+			try {
+			Connection conn = getConnection(); 	
+			PreparedStatement pstmt = conn.prepareStatement(sql);	
+			ResultSet rs = pstmt.executeQuery();
+			pname = rs.getString(pname);
+			rs.close(); pstmt.close(); conn.close();
+			} catch(Exception e) {
+				
+			}
+			
+			return pname;
+		}
+		public String selectPimage(String pcode) {
+			String pimage = null;
+			String sql = "select pimage from product where pcode=?";
+			try {
+			Connection conn = getConnection(); 	
+			PreparedStatement pstmt = conn.prepareStatement(sql);	
+			ResultSet rs = pstmt.executeQuery();
+			pimage = rs.getString(pimage);
+			rs.close(); pstmt.close(); conn.close();
+			} catch(Exception e) {
+				
+			}
+			
+			return pimage;
+		}
+		public int selectPrice(String pcode) {
+			int price = 0;
+			String sql = "select price from product where pcode=?";
+			try {
+			Connection conn = getConnection(); 	
+			PreparedStatement pstmt = conn.prepareStatement(sql);	
+			ResultSet rs = pstmt.executeQuery();
+			price = rs.getInt(price);
+			rs.close(); pstmt.close(); conn.close();
+			} catch(Exception e) {
+				
+			}
+			
+			return price;
 		}
 }
 /*
