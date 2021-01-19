@@ -18,12 +18,12 @@ public class ProductService { // 수정 필요
 				.getServletContext().getRealPath("/productimage");
 		MultipartRequest mr = new MultipartRequest(request,
 			real, max,"utf-8",new DefaultFileRenamePolicy());
-		String Pimage = mr.getFilesystemName("pimage");
+		String image = mr.getFilesystemName("image");
 		// File file = new File(real+"/"+Pimage);
 		// int fileSize = (int)file.length();
 		// DB에 연동하기위해 dto값 세팅 
 		Product pd = new Product();
-		pd.setPimage(Pimage);
+		pd.setImage(image);
 		ProductDao pdt = ProductDao.getInstance();
 		
 		try {

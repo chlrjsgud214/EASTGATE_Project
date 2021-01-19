@@ -29,7 +29,7 @@ public class ProductAction implements CommandProcess  {
 		String pname = StringUtils.nvl(mr.getParameter("pname"));
 		String price = StringUtils.nvl(mr.getParameter("price")); 
 		String pcount = StringUtils.nvl(mr.getParameter("pcount"));  
-		String pimage =StringUtils.nvl(mr.getFilesystemName("pimage"));
+		String image =StringUtils.nvl(mr.getFilesystemName("image"));
 		String explain = StringUtils.nvl(mr.getParameter("explain"));	 
 //		
 //		System.out.println("pcode"+pcode);
@@ -47,7 +47,7 @@ public class ProductAction implements CommandProcess  {
 		product.setPname(pname);
 		product.setPrice(Integer.parseInt(price));
 		product.setPcount(Integer.parseInt(pcount));
-		product.setPimage(pimage);
+		product.setImage(image);
 		product.setExplain(explain);
 			
 		result = pd.insert(product);

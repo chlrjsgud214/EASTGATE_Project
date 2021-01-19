@@ -46,7 +46,7 @@ public class ProductDao {
 				pstmt.setString(1, pd.getPcode()); // 제품 번호
 				pstmt.setString(2, pd.getPid()); // 판매자 번호
 				pstmt.setString(3, pd.getPname()); // 제품이름				
-				pstmt.setString(4, pd.getPimage()); // 썸네일
+				pstmt.setString(4, pd.getImage()); // 썸네일
 				pstmt.setInt(5, pd.getPrice()); // 가격
 				pstmt.setInt(6, pd.getPcount()); // 재고수량
 				pstmt.setString(7, pd.getExplain()); // 제품설명
@@ -119,7 +119,7 @@ public class ProductDao {
 		             pdt.setPname(StringUtils.nvl(rs.getString("pname"))); // 제품이름
 		             pdt.setPrice(rs.getInt("price")); // 가격
 		             pdt.setPcount(rs.getInt("pcount")); // 재고수량
-		             pdt.setPimage(StringUtils.nvl(rs.getString("image"))); // 썸네일
+		             pdt.setImage(StringUtils.nvl(rs.getString("image"))); // 썸네일
 		             pdt.setExplain(StringUtils.nvl(rs.getString("explain"))); // 제품설명
 		             list.add(pdt);
 				}
@@ -163,7 +163,7 @@ public class ProductDao {
 	             pdt.setPid(rs.getString("pid")); // 판매자 번호
 	             pdt.setPname(rs.getString("pname")); // 제품이름
 	             pdt.setPrice(rs.getInt("price")); // 가격
-	             pdt.setPimage(rs.getString("image")); // 썸네일
+	             pdt.setImage(rs.getString("image")); // 썸네일
 	             pdt.setPcount(rs.getInt("pcount")); // 재고수량	             
 	             pdt.setExplain(rs.getString("explain")); // 제품설명
 	                 
@@ -195,8 +195,9 @@ public class ProductDao {
 			          pdt.setPname(rs.getString("pname")); // 제품이름
 			          pdt.setPrice(rs.getInt("price")); // 가격
 			          pdt.setPcount(rs.getInt("pcount")); // 재고수량
-			          pdt.setPimage(rs.getString("image")); // 썸네일
+			          pdt.setImage(rs.getString("image")); // 썸네일
 			          pdt.setExplain(StringUtils.nvl(rs.getString("explain"))); // 제품설명
+			          System.out.println("dao_select : "+pdt.getImage());
 				}
 			}catch(Exception e){System.out.println(e.getMessage());
 			}finally {
@@ -206,6 +207,8 @@ public class ProductDao {
 				}catch (Exception e) {		}
 			}
 			return pdt;
+			
+			
 		}
 		public String selectPname(String pcode) {
 			String pname = null;
@@ -223,19 +226,19 @@ public class ProductDao {
 			return pname;
 		}
 		public String selectPimage(String pcode) {
-			String pimage = null;
+			String image = null;
 			String sql = "select image from product where pcode=?";
 			try {
 			Connection conn = getConnection(); 	
 			PreparedStatement pstmt = conn.prepareStatement(sql);	
 			ResultSet rs = pstmt.executeQuery();
-			pimage = rs.getString("image");
+			image = rs.getString("image");
 			rs.close(); pstmt.close(); conn.close();
 			} catch(Exception e) {
 				
 			}
 			
-			return pimage;
+			return image;
 		}
 		public int selectPrice(String pcode) {
 			int price = 0;

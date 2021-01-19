@@ -227,9 +227,9 @@ String pid = (String)session.getAttribute("id");
 		var price=frm.price.value;
 		var pcount=frm.pcount.value;
 		var explain=frm.explain.value;
-		var pimage=frm.pimage.value;
+		var image=frm.image.value;
 		alert("pcode :"+pcode+"\r\npname : "+pname+"\r\nprice :"+price+"\r\npcount :"
-				+pcount+"\r\nexplain :"+explain+"\r\n 이미지 : "+pimage+
+				+pcount+"\r\nexplain :"+explain+"\r\n 이미지 : "+image+
 				"\r\n끝");
 	}
 
@@ -237,7 +237,7 @@ String pid = (String)session.getAttribute("id");
 </head>
 <body>
 <h1 align="center">
-							<a href="main.do"><img alt="" src="image/logo7.png"></a>
+							<a href="mmain.do"><img alt="" src="image/logo7.png"></a>
 						</h1>
 	<form name="productForm" action="productupload.do" 
 	method="post" id="frm" onsubmit="return valchk()"
@@ -278,7 +278,7 @@ String pid = (String)session.getAttribute("id");
             <td> 
                 <div class="field" align="left" >
                 <span>
-                    <input type="file" id="pimageid" name="pimage" />
+                    <input type="file" id="pimageid" name="image" />
                 </span>
                 </div>
             </td>

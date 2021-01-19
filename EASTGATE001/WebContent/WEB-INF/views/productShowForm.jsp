@@ -95,7 +95,7 @@ function change () {
                 <th>제목</th><td>${product.pname}</td>
             </tr>
             <tr>
-                <th>이미지</th><td><a href="productimage/${product.pimage }"><img class="imageThumb" src="productimage/${product.pimage }" alt="이미지 없음" ></a></td>
+                <th>이미지</th><td><a href="productimage/${product.image }"><img class="imageThumb" src="productimage/${product.image }" alt="이미지 없음" ></a></td>
             </tr>
             <tr>
                 <th>가격</th><td>${product.price}</td>

@@ -53,7 +53,7 @@ td.fileupload{
 <c:if test="${not empty list }">
 	<c:forEach var="pi" items="${list }">
 		<tr>
-		<td><a href="productimage/${pi.pimage }"><img class="imageThumb" src="productimage/${pi.pimage }" alt="이미지 없음" ></a></td>
+		<td><a href="productimage/${pi.image }"><img class="imageThumb" src="productimage/${pi.image }" alt="이미지 없음" ></a></td>
 		
 		<td><a type="submit" href="productShow.do?pcode=${pi.pcode }"  >${pi.pcode }</a></td><td>${pi.pid }</td>
 			
