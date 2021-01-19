@@ -163,7 +163,7 @@ public class ProductDao {
 	             pdt.setPid(rs.getString("pid")); // 판매자 번호
 	             pdt.setPname(rs.getString("pname")); // 제품이름
 	             pdt.setPrice(rs.getInt("price")); // 가격
-	             pdt.setPimage(rs.getString("pimage")); // 썸네일
+	             pdt.setPimage(rs.getString("image")); // 썸네일
 	             pdt.setPcount(rs.getInt("pcount")); // 재고수량	             
 	             pdt.setExplain(rs.getString("explain")); // 제품설명
 	                 
@@ -195,8 +195,8 @@ public class ProductDao {
 			          pdt.setPname(rs.getString("pname")); // 제품이름
 			          pdt.setPrice(rs.getInt("price")); // 가격
 			          pdt.setPcount(rs.getInt("pcount")); // 재고수량
-			          pdt.setPimage(rs.getString("pimage")); // 썸네일
-			          pdt.setExplain(rs.getString("explain")); // 제품설명
+			          pdt.setPimage(rs.getString("image")); // 썸네일
+			          pdt.setExplain(StringUtils.nvl(rs.getString("explain"))); // 제품설명
 				}
 			}catch(Exception e){System.out.println(e.getMessage());
 			}finally {
