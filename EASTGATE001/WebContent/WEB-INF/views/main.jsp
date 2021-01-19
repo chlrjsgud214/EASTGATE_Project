@@ -38,7 +38,7 @@
 				<div class="container">
 					<nav id="main_menu">
 				        <ul class="list_gnb">
-				            <li><a href="#">패션의류/잡화</a>
+				            <li><a href="#" >패션의류/잡화</a>
 				                <div id="mega-menu">
 				                    <ul class="list_lnb">
 				                        <li><a href="#">여성</a></li>
