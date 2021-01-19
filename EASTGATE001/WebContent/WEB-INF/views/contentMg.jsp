@@ -6,19 +6,23 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+.b {
+	background-color: white;
+}
 h2 {
 	text-align: center;
 }
 table {margin: auto;margin-top:40px;
-		width:90%; 
+		width:72%; 
+		text-align: center;
 }
 
 th {
-	padding:10px;
+	padding:9px;
 	background: #333; color: #fff;
 }
 td {
-	padding: 10px; background: #777;
+	padding: 7px; background: #777;
 }
 </style>
 </head>
@@ -30,10 +34,9 @@ td {
 		<td>${member.name}</td><td>${member.tel}</td>
 		<td>${member.addr}</td><td>${member.email}</td>
 		<td>${member.reg_date}</td><td>${member.del}</td></tr>
+	<tr align="left">
+		<td colspan="8" class="b"><button onclick="location.href='memberDelete.do?id=${member.id}'">강제 탈퇴</button>
+			<button onclick="location.href='memberMg.do'">목록</button></td></tr>
 </table>
-<div align="center" style="margin-right: 82%">
-<button onclick="location.href='memberDelete.do?id=${member.id}'">강제 탈퇴</button>
-<button onclick="location.href='memberMg.do'">목록</button>
-</div>
 </body>
 </html>
