@@ -38,12 +38,56 @@ td.fileupload{
 	font-weight: bold;
 }
 </style>
+
+<script type="text/javascript">
+var sell_price;
+var amount;
+
+function init () {
+	sell_price = document.productShowForm.sell_price.value;
+	amount = document.productShowForm.amount.value;
+	document.form.sum.value = sell_price;
+	change();
+}
+
+function add () {
+	hm = document.productShowForm.amount;
+	sum = document.productShowForm.sum;
+	hm.value ++ ;
+
+	sum.value = parseInt(hm.value) * sell_price;
+}
+
+function del () {
+	hm = document.productShowForm.amount;
+	sum = document.productShowForm.sum;
+		if (hm.value > 1) {
+			hm.value -- ;
+			sum.value = parseInt(hm.value) * sell_price;
+		}
+}
+
+function change () {
+	hm = document.productShowForm.amount;
+	sum = document.productShowForm.sum;
+
+		if (hm.value < 0) {
+			hm.value = 0;
+		}
+	sum.value = parseInt(hm.value) * sell_price;
+}  
+
+</script>
 </head>
 <body>
     <form name="productShowForm" action="cart.do" method="post" enctype="multipart/form-data">
         <table>
-        <tr> <td class="fileupload" colspan="7" align="right"> <button onclick="cart.do?pcode=${product.pcode }">구매하기</button>
-         <button onclick="cart.do?pcode=${product.pcode }">장바구니 담기</button> </td> </tr>
+        	<tr> 
+        		<td class="fileupload" colspan="7" align="right"> <button onclick="cart.do?pcode=${product.pcode }">구매하기</button>
+         		<input type="text" name="amount" value="1" size="3" onchange="change();">
+				<input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();">        
+            	<button onclick="cart.do?pcode=${product.pcode }">장바구니 담기</button> </td> 
+           	</tr>
             <tr>
                 <th>제목</th><td>${product.pname}</td>
             </tr>

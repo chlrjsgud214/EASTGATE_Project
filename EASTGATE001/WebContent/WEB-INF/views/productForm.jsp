@@ -239,7 +239,8 @@ String pid = (String)session.getAttribute("id");
 <h1 align="center">
 							<a href="main.do"><img alt="" src="image/logo7.png"></a>
 						</h1>
-	<form name="productForm" action="productupload.do" method="post" id="frm" onsubmit="return valchk()"
+	<form name="productForm" action="productupload.do" 
+	method="post" id="frm" onsubmit="return valchk()"
     enctype="multipart/form-data">
     <table>
     	<tr><th>카테고리 선택</th><td>

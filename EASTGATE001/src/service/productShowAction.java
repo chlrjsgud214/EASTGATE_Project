@@ -10,8 +10,6 @@ public class productShowAction implements CommandProcess{
 		System.out.println("get Pcode : "+pcode);
 		ProductDao pd = ProductDao.getInstance();
 		Product product = pd.select(pcode);
-		System.out.println("get Pcode : "+product.getPimage());
-		System.out.println("get Pcode : "+pcode);
 		request.setAttribute("product", product);
 		return "productShowForm";
 	}
