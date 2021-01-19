@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/form.css">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 	function chk() {
@@ -51,11 +52,11 @@
 			<td><input type="email" name="email" required="required" value="${member.email }"></td>
 		</tr> 
 		<tr>
-			<th colspan="2"><input type="submit" value="수정"><input type="button" value="취소"
-				onclick="location.href='select.do'"></th>
+			<th colspan="2"><input type="submit" value="수정" class="btn"><input type="button" value="취소"
+				onclick="location.href='select.do'" class="btn"><button onclick="location.href='mmain.do'">메인으로</button></th>
+
 		</tr>
 	</table>
 </form>
-<button onclick="location.href='mmain.do'">메인으로</button>
 </body>
 </html>
