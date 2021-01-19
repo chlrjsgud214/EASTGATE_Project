@@ -207,6 +207,51 @@ public class ProductDao {
 			}
 			return pdt;
 		}
+		public String selectPname(String pcode) {
+			String pname = null;
+			String sql = "select pname from product where pcode=?";
+			try {
+			Connection conn = getConnection(); 	
+			PreparedStatement pstmt = conn.prepareStatement(sql);	
+			ResultSet rs = pstmt.executeQuery();
+			pname = rs.getString(pname);
+			rs.close(); pstmt.close(); conn.close();
+			} catch(Exception e) {
+				
+			}
+			
+			return pname;
+		}
+		public String selectPimage(String pcode) {
+			String pimage = null;
+			String sql = "select pimage from product where pcode=?";
+			try {
+			Connection conn = getConnection(); 	
+			PreparedStatement pstmt = conn.prepareStatement(sql);	
+			ResultSet rs = pstmt.executeQuery();
+			pimage = rs.getString(pimage);
+			rs.close(); pstmt.close(); conn.close();
+			} catch(Exception e) {
+				
+			}
+			
+			return pimage;
+		}
+		public int selectPrice(String pcode) {
+			int price = 0;
+			String sql = "select price from product where pcode=?";
+			try {
+			Connection conn = getConnection(); 	
+			PreparedStatement pstmt = conn.prepareStatement(sql);	
+			ResultSet rs = pstmt.executeQuery();
+			price = rs.getInt(price);
+			rs.close(); pstmt.close(); conn.close();
+			} catch(Exception e) {
+				
+			}
+			
+			return price;
+		}
 }
 /*
 	// 제품 등록

@@ -15,7 +15,7 @@
 		}
 	}
 	function fnGo() {
-		location.href = "Mmain.do";
+		location.href = "mmain.do";
 	}
 </script>
 </head>

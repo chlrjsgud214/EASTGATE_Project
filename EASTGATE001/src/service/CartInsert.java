@@ -2,23 +2,29 @@ package service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import cart.Cart;
 import cart.CartDao;
+import product.ProductDao;
 
 public class CartInsert implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		int result = 0;
+		HttpSession session = request.getSession();
 		String pcode = request.getParameter("pcode"); 
-		String id = request.getParameter("id"); 
-	    String pname = request.getParameter("pname"); 
-	    String image = request.getParameter("image");
-		int price = Integer.parseInt(request.getParameter("price"));
-		int ocount = Integer.parseInt(request.getParameter("ocount"));
-		CartDao cd = CartDao.getInstance();
+		ProductDao pd = ProductDao.getInstance();
 		
+		String pname = pd.selectPname(pcode);
+		
+		String image = pd.selectPimage(pcode);
+		int price = pd.selectPrice(pcode);
+		int ocount = Integer.parseInt(request.getParameter("ocount"));
+		String id = session.getId();
+		
+		CartDao cd = CartDao.getInstance();	
 		Cart cart = new Cart();
 		
 			cart.setPcode(pcode);
