@@ -55,7 +55,7 @@ td.fileupload{
 		<tr>
 		<td><a href="productimage/${pi.image }"><img class="imageThumb" src="productimage/${pi.image }" alt="이미지 없음" ></a></td>
 		
-		<td><a type="submit" href="productCList.do?pcode=${pi.pcode }&sub=1"  >${pi.pcode }</a></td><td>${pi.pid }</td>
+		<td><a type="submit" href="productCList.do?pcode=${pi.pcode }"  >${pi.pcode }</a></td><td>${pi.pid }</td>
 			
 			<td> <a type="submit" href="productShow.do?pcode=${pi.pcode }"  >${pi.pname}</a></td><td>${pi.price}</td>
 			<td>${pi.pcount}</td>

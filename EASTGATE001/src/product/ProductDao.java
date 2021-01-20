@@ -65,7 +65,34 @@ public class ProductDao {
 			}
 			return result;
 		}
-
+		
+		// 제품 등록
+				public int delete(String pcode)  {
+					int result = 0;
+					Connection conn = getConnection();
+					PreparedStatement pstmt = null;		
+					String sql_pd_delete = "delete from product where pcode=?";
+					// 제품 번호 , 판매자 번호, 제품 이름, 가격, 재고수량, 썸네일 이미지, 제품설명
+					System.out.println("delete : sql ok1");
+					try {
+						pstmt = conn.prepareStatement(sql_pd_delete);
+						pstmt.setString(1, pcode);
+						result=pstmt.executeUpdate();
+						System.out.println("delete : sql ok");
+					} catch (Exception e) {
+						System.out.println(e.getMessage());
+					} 
+					finally {
+						try {
+							if (pstmt != null)
+								pstmt.close();
+							if (conn != null)
+								conn.close();
+						} catch (Exception e) {
+						}
+					}
+					return result;
+				}
 		
 		// 전체등록된 책의 수를 얻어내는 메소드
 		public int getProductCount() {

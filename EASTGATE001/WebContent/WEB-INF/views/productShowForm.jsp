@@ -11,8 +11,13 @@ h2 {
 	text-align: center;
 }
 form {margin: 100px 0;}
+form.btn {margin: 5px 0;
+}
 table {margin: auto;
 		width:800px; 
+}
+table.btn {margin: 0 0 0 0 ;
+		width:0; 
 }
 .imageThumb {
         max-height: 150px;
@@ -83,18 +88,24 @@ function change () {
 <h1 align="center">
 <a href="mmain.do"><img alt="" src="image/logo7.png"></a>
 </h1>
-    <form name="productShowForm" action="cartInsert.do" method="post" >
+	<div>
+    <form class="btn" name="productShowForm" action="cartInsert.do" method="post" >
     <input type="hidden" name="pcode" value="${product.pcode }">
     <input type="hidden" name="pname" value="${product.pname }">
     <input type="hidden" name="image" value="${product.image }">
     <input type="hidden" name="price" value="${product.price }">
-        <table>
-        	<tr> 
-        		<td class="fileupload" colspan="7" align="right"> <button onclick="cartInsert.do?pcode=${product.pcode }">구매하기</button>
+        <table >
+        <tr> 
+        		<td class="fileupload" colspan="6" align="right"> <button onclick="cartInsert.do?pcode=${product.pcode }">구매하기</button>
          		<input type="text" name="amount" value="1" size="3" onchange="change();">
 				<input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();">  				     
-            	<button type="submit" >장바구니 담기</button> </td> 
+            	<button type="submit" >장바구니 담기</button> 
+            	</td> 
            	</tr>
+           	</table>
+           	</form>
+        <table>
+        	
             <tr>
                 <th>제목</th><td>${product.pname}</td>
             </tr>
@@ -113,7 +124,17 @@ function change () {
             </tr>
             
         </table>
+        <form class="btn" name="pdelete" action="productdelete.do" method="post">
+         <input type="hidden" name="pcode" value="${product.pcode }">
+        <table >       
+        <tr > 
+           		<td class="fileupload" colspan="6" align="left"> 
+        		<button type="submit" >삭제하기</button>
+        		</td>         		  				     
+           	</tr>
+           	</table>
+           	</form>
+           	</div>
 
-    </form>
 </body>
 </html>
