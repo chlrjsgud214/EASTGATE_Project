@@ -84,6 +84,10 @@ function change () {
 <a href="mmain.do"><img alt="" src="image/logo7.png"></a>
 </h1>
     <form name="productShowForm" action="cartInsert.do" method="post" >
+    <input type="hidden" name="pcode" value="${product.pcode }">
+    <input type="hidden" name="pname" value="${product.pname }">
+    <input type="hidden" name="image" value="${product.image }">
+    <input type="hidden" name="price" value="${product.price }">
         <table>
         	<tr> 
         		<td class="fileupload" colspan="7" align="right"> <button onclick="cartInsert.do?pcode=${product.pcode }">구매하기</button>
