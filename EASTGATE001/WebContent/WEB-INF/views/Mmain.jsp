@@ -41,10 +41,10 @@
 				<div class="container">
 					<nav id="main_menu">
 				        <ul class="list_gnb">
-				            <li><a href="#">패션의류/잡화</a>
+				            <li><a href="productCList.do?pcode=C&sub=1">패션의류/잡화</a>				            
 				                <div id="mega-menu">
 				                    <ul class="list_lnb">
-				                        <li><a href="#">여성</a></li>
+				                        <li><a href="productCList.do?pcode=C0&sub=2">여성</a></li>
 				                        <li><a href="#">티셔츠</a></li>
 				                        <li><a href="#">블라우스/셔츠</a></li>
 										<li><a href="#">블라우스/셔츠</a></li>
@@ -54,7 +54,7 @@
 										<li><a href="#">니트류/조끼</a></li>
 				                    </ul>
 				                    <ul class="list_lnb">
-				                        <li><a href="#">여성</a></li>
+				                        <li><a href="productCList.do?pcode=C0&sub=2">여성</a></li>
 										<li><a href="#">아우터</a></li>
 										<li><a href="#">패션운동복</a></li>
 										<li><a href="#">비키니/비치웨어</a></li>
@@ -63,7 +63,7 @@
 										<li><a href="#">가방/잡화</a></li>
 				                    </ul>
 				                    <ul class="list_lnb">
-				                        <li><a href="#">남성</a></li>
+				                        <li><a href="productCList.do?pcode=C1&sub=2">남성</a></li>
 				                        <li><a href="#">티셔츠</a></li>
 										<li><a href="#">맨투맨/후드티</a></li>
 										<li><a href="#">셔츠</a></li>
@@ -72,7 +72,7 @@
 										<li><a href="#">후드집업/집업류</a></li>
 				                    </ul>
 				                    <ul class="list_lnb">
-				                    	<li><a href="#">남성</a></li>
+				                    	<li><a href="productCList.do?pcode=C1&sub=2">남성</a></li>
 										<li><a href="#">스웨터</a></li>
 										<li><a href="#">가디건</a></li>
 										<li><a href="#">베스트/조끼</a></li>
@@ -83,10 +83,10 @@
 				                    </ul>
 				                </div>
 				            </li>
-				            <li><a href="#">스포츠</a>
+				            <li><a href="productCList.do?pcode=S&sub=1">스포츠</a>
 				                <div id="mega-menu">
 				                    <ul class="list_lnb">
-				                        <li><a href="#">여성</a></li>
+				                        <li><a href="productCList.do?pcode=S0&sub=2">여성</a></li>
 				                        <li><a href="#">언더레이어</a></li>
 				                        <li><a href="#">티셔츠</a></li>
 				                        <li><a href="#">자켓/집업</a></li>
@@ -98,7 +98,7 @@
 				                        <li><a href="#">수영복/레쉬가드</a></li>
 				                    </ul>
 				                    <ul class="list_lnb">
-				                        <li><a href="#">남성</a></li>
+				                        <li><a href="productCList.do?pcode=S1&sub=2">남성</a></li>
 				                        <li><a href="#">언더레이어</a></li>
 				                        <li><a href="#">티셔츠</a></li>
 				                        <li><a href="#">자켓/집업</a></li>
@@ -110,7 +110,7 @@
 				                        <li><a href="#">수영복/레쉬가드</a></li>
 				                    </ul>
 				                    <ul class="list_lnb">
-				                        <li><a href="#">신발</a></li>
+				                        <li><a href="productCList.do?pcode=S2&sub=2">신발</a></li>
 				                        <li><a href="#">런닝화</a></li>
 				                        <li><a href="#">운동화</a></li>
 				                        <li><a href="#">스포츠샌들</a></li>
@@ -121,7 +121,7 @@
 				                        <li><a href="#">축구화</a></li>
 				                    </ul>
 				                    <ul class="list_lnb">
-				                        <li><a href="#">잡화</a></li>
+				                        <li><a href="productCList.do?pcode=S3&sub=2">잡화</a></li>
 				                        <li><a href="#">가방/파우치</a></li>
 				                        <li><a href="#">모자/장갑</a></li>
 				                        <li><a href="#">양말/타이즈</a></li>
@@ -133,10 +133,10 @@
 				                    </ul>
 				                </div>
 				            </li>
-				            <li><a href="#">뷰티</a>
+				            <li><a href="productCList.do?pcode=B&sub=1">뷰티</a>
 				                <div id="mega-menu">
 				                    <ul class="list_lnb">
-				                        <li><a href="#">뷰티</a></li>
+				                        <li><a href="productCList.do?pcode=B0&sub=2">뷰티</a></li>
 										<li><a href="#">클랜징/필링</a></li>
 										<li><a href="#">메이크업</a></li>
 										<li><a href="#">향수</a></li>
@@ -148,10 +148,10 @@
 				                    </ul>
 				                </div>
 				            </li>
-				            <li><a href="#">식품</a>
+				            <li><a href="productCList.do?pcode=F&sub=1">식품</a>
 				                <div id="mega-menu">
 				                    <ul class="list_lnb">
-				                        <li><a href="#">건강식품</a></li>
+				                        <li><a href="productCList.do?pcode=F0&sub=2">건강식품</a></li>
 										<li><a href="#">건강즙</a></li>
 										<li><a href="#">비타민/미네랄</a></li>
 										<li><a href="#">영양제</a></li>
@@ -163,10 +163,10 @@
 				                    </ul>
 				                </div>
 				            </li>
-				            <li><a href="#">가전디지털</a>
+				            <li><a href="productCList.do?pcode=D&sub=1">가전디지털</a>
 				                <div id="mega-menu">
 				                    <ul class="list_lnb">
-				                        <li><a href="#">가전디지털</a></li>
+				                        <li><a href="productCList.do?pcode=D0&sub=2">가전디지털</a></li>
 										<li><a href="#">공기청정기</a></li>
 										<li><a href="#">다리미/재봉/보풀</a></li>
 										<li><a href="#">비데/온수기</a></li>

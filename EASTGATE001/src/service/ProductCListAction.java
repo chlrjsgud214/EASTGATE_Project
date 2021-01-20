@@ -14,7 +14,9 @@ public class ProductCListAction implements CommandProcess {
 		System.out.println("들어옴");
 		ProductDao pis=ProductDao.getInstance();
 		String pcode = request.getParameter("pcode");
-		String code = pcode.substring(0,1);
+		int sub = Integer.parseInt(request.getParameter("sub"));
+		if(sub==0)sub=1;
+		String code = pcode.substring(0,sub);
 		System.out.println("code : "+code);
 		List<Product> list=pis.code_list(code);
 		
