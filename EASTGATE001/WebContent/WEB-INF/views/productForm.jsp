@@ -240,7 +240,7 @@ String pid = (String)session.getAttribute("id");
 							<a href="mmain.do"><img alt="" src="image/logo7.png"></a>
 						</h1>
 	<form name="productForm" action="productupload.do" 
-	method="post" id="frm" onsubmit="return valchk()"
+	method="post" id="frm"
     enctype="multipart/form-data">
     <table>
     	<tr><th>카테고리 선택</th><td>
@@ -270,7 +270,7 @@ String pid = (String)session.getAttribute("id");
         </tr>
         <tr>
 			<th>판매자 ID</th>
-			<td><%=pid%> <input type="button" name="chk" value="값확인" onclick="valchk()"> </td>
+			<td><%=pid%></td>
 			
 		</tr>
         <tr>             

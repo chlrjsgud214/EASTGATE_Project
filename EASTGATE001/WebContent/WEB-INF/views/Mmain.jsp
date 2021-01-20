@@ -25,10 +25,9 @@
 					</h1>
 					<ul class="util">
 						<li><a href="mypageForm.do">마이페이지</a></li>
-						<li><a href="#">문의내역</a></li>
 						<li><a href="cartInsert.do">장바구니</a></li>
-						<li><a href="productForm.do">제품등록 - 시연용</a></li>
-						<li><a href="productlist.do">제품리스트 - 시연용</a></li>
+						<li><a href="productForm.do">제품등록 </a></li>
+						<li><a href="productlist.do">제품리스트</a></li>
 						<li><a href="logout.do">로그아웃</a></li>
 					</ul>
 					<form action="productNList.do" class="search_form" method="get">
@@ -264,8 +263,6 @@
 			<div class="container">
 				<ul>
 					<li><a href="blist.do">Q&A</a></li>
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">상품후기</a></li>
 					<li><a href="mnotice.do">공지사항</a></li>
 				</ul>
 			</div> <!-- .container end -->

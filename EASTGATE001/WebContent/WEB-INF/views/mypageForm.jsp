@@ -14,7 +14,7 @@ h2 {
 	text-align: center;
 }
 table {margin: auto;margin-top:40px;
-		width:90%; 
+		width:40%; 
 }
 
 th {
@@ -22,7 +22,7 @@ th {
 	background: #333; color: #fff;
 }
 td {
-	padding: 5px; background: #777;
+	padding: 10px; background: #777;
 	text-align: center;
 }
 </style>
