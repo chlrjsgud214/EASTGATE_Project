@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="carts">
-	<select id="select" parameterType="String" resultType="cart">
+	<select id="select" parameterType="string" resultType="cart">
 		select * from cart where id=#{id }
 	</select>
 	<insert id="insert" parameterType="cart">
@@ -11,4 +11,5 @@
 	<delete id="delete" parameterType="cart">
 		delete from cart where id = #{id }
 	</delete>
+	<select id="select2" parameterType="string" resultType="list"></select>
 </mapper>

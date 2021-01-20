@@ -1,7 +1,11 @@
+<%@page import="com.sun.crypto.provider.RSACipher"%>
+<%@page import="java.util.List"%>
+<%@page import="cart.CartDao"%>
 <%@page import="cart.Cart"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,59 +24,64 @@
 </script>
 </head>
 <body>
+<%-- 
 <%
-	ArrayList<Cart> cart = null;
-	Object obj = session.getAttribute("cart");
-	if(obj == null) {
-		cart = new ArrayList<Cart>();
-	} else {
-		cart = (ArrayList<Cart>) obj;
-	}
 	
-	if(cart.size() ==0) { 	%>
+	String id = (String)request.getAttribute("id");
+	System.out.println("id = "+id);
+	CartDao cd = CartDao.getInstance();
+	Cart cart = (ArrayList<Cart>) cd.getCart(id);
+	ArrayList<Cart> cartList = null;
+	
+	if(cart == null) {
+		cartList = new ArrayList<Cart>();
+	} else {
+		cartList = (ArrayList<Cart>) cart;
+	}
+
+	
+	if(cartList.size() ==0) { 	%> --%>
+	<c:if test="${empty result }">
 	<h1>장바구니</h1>	
 	<table border="1">
 		<tr>
 			<td>장바구니에 담긴 상품이 없습니다. <a href="mmain.do">쇼핑계속하기</a></td>
 		</tr>
 	</table>
-	<%	} else {	%>
+	</c:if>
+<c:if test="${not empty list }">
 	<h1>장바구니</h1>
 	<form action="ordersForm.do" method="post">
-	<table border="1">
+		<table border="1">
 		<tr>
-			<th>번호</th>
 			<th>상품명</th>
 			<th>판매가격</th>
 			<th>수량</th>
 			<th>금액</th>
 		</tr>
-	<%		int totalSum = 0, total = 0;			
-			for(int i = 0; i < cart.size(); i++) { 
-				Cart ct = cart.get(i); %>
+	<c:forEach var="ct" items="${list }">
 		<tr>
-			<td><%= i+1 %></td>
-			<td><img src="../image/<%=ct.getImage() %>"><%=ct.getPname() %></td>
-			<td><%=ct.getPrice() %></td>
-			<td><%=ct.getOcount() %></td>
-			<%total = ct.getPrice() * ct.getOcount(); %>
-			<td><%=total %></td>
+			<td><img src="productimage/${ct.image }" width="100px" height="100px">${ct.pname }</td>
+			<td>${ct.price }</td>
+			<td>${ct.ocount }</td>	
+			<td>${ct.price * ct.ocount }</td>
+			
 		</tr>		
-	<%			totalSum += total;
-			}  %>
+	</c:forEach>
+</c:if>
 		<tr>
-			<td colspan="5" align="right"><b>총금액 : <%=totalSum %>원 </b></td>
+			<td colspan="5" align="right"><b>총금액 : 0원 </b></td>
 		</tr>
+		
 		<tr>
 			<td colspan="5">
 				<input type='submit' value='주문하기' />
 				<input type='button' value='쇼핑 계속하기' onclick='fnGo()' />
 				<input type='button' value='장바구니 비우기' onclick='fnClear()' />
 				</td>
-		</tr>	
-	<%	}
-	%>		
+		</tr>		
 	</table>
 </form>
+
 </body>
 </html>
