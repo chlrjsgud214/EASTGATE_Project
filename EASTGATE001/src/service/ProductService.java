@@ -39,4 +39,5 @@ public class ProductService { // 수정 필요
 		List<Product> list = pd.list();
 		return list;
 	}
+	
 }
