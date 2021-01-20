@@ -20,7 +20,7 @@
 </head>
 
 <body>
-	<form action="orders.do">
+	<form action="orders.do" method="post">
 	<table border="1">
 		<tr>
 			<th colspan="4">상품목록</th>
@@ -40,11 +40,11 @@
 			<c:set var="sum" value="${ct.price * ct.ocount }"/>
 			<td>${sum}</td>
 		</tr>		
-		<c:set var="pcode" value=${ct.pcode } scope="session"/>
+		<%-- <c:set var="pcode" value=${ct.pcode } scope="session"/>
 		<c:set var="pname" value=${ct.pcode } scope="session"/>
 		<c:set var="image" value=${ct.pcode } scope="session"/>
 		<c:set var="price" value=${ct.pcode } scope="session"/>
-		<c:set var="ocount" value=${ct.pcode } scope="session"/>
+		<c:set var="ocount" value=${ct.pcode } scope="session"/> --%>
 		</c:forEach>
 		<tr>
 			<td colspan="4" align="right"><b>총금액 : ${total } </b></td>
