@@ -1,9 +1,10 @@
 package service;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import cart.Cart;
 import cart.CartDao;
@@ -13,20 +14,16 @@ public class OrdersForm implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		String id = request.getParameter("id");
-		ArrayList<Cart> cartLists = null;
-		Cart cartList = null;
+		int result = 0;
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
+		System.out.println(id);
+		CartDao cd = CartDao.getInstance();
+		List<Cart> list = cd.list(id);
 		
-		CartDao cartProcess = CartDao.getInstance();
-		cartLists = cartProcess.getCart(id);
-		
-		for (int i=0; i<cartLists.size(); i++) {
-			cartList = (Cart)cartLists.get(i);
-			request.setAttribute("cartList", cartList);
-		}
 		request.setAttribute("id", id);
-		
-		
+		request.setAttribute("list", list);
+		request.setAttribute("result", result);		
 		return "ordersForm";
 	}
 

@@ -5,74 +5,53 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/cart.css">
 <script type="text/javascript">
 	function fnClear() {
-		location.href="cartClear.do";
+		location.href="cartInsert.do";
 	}
 </script>
 </head>
 
 <body>
-<%
-	String id = request.getParameter("id");
-	Member member = null;
-	MemberDao md = MemberDao.getInstance();
-	member = md.select(id);
-%>
-<%
-	ArrayList<Cart> cart = null;
-	Object obj = session.getAttribute("cart");
-	if(obj == null) {
-		cart = new ArrayList<Cart>();
-	} else {
-		cart = (ArrayList<Cart>) obj;
-	}
-	
-	if(cart.size() ==0) { 	%>
-	<h1>장바구니</h1>	
-	<table border="1">
-		<tr>
-			<td>장바구니에 담긴 상품이 없습니다. <a href="mmain.do">쇼핑계속하기</a></td>
-		</tr>
-	</table>
-	<%	} else {	%>
 	<form action="orders.do">
-	
-	<h1>장바구니</h1>
 	<table border="1">
 		<tr>
-			<th>번호</th>
+			<th colspan="4">상품목록</th>
+		</tr>
+		<tr>
 			<th>상품명</th>
 			<th>판매가격</th>
 			<th>수량</th>
 			<th>금액</th>
 		</tr>
-	<%		int totalSum = 0, total = 0;			
-			for(int i = 0; i < cart.size(); i++) { 
-				Cart ct = cart.get(i); %>
+
+		<c:forEach var="ct" items="${list }">
 		<tr>
-			<td><%= i+1 %></td>
-			<td><img src="../image/<%=ct.getImage() %>"><%=ct.getPname() %></td>
-			<td><%=ct.getPrice() %></td>
-			<td><%=ct.getOcount() %></td>
-			<%total = ct.getPrice() * ct.getOcount(); %>
-			<td><%=total %></td>
+			<td><img src="productimage/${ct.image }" width="100px" height="100px">${ct.pname }</td>
+			<td>${ct.price }</td>
+			<td>${ct.ocount }</td>	
+			<c:set var="sum" value="${ct.price * ct.ocount }"/>
+			<td>${sum}</td>
 		</tr>		
-	<%			totalSum += total;
-			}
-			%>
+		<c:set var="pcode" value="${ct.pcode }" scope="session"></c:set>	
+		</c:forEach>
 		<tr>
-			<td colspan="5" align="right"><b>총금액 : <%=totalSum %>원 </b></td>
-		</tr>
-	<%} %>
-		
+			<td colspan="4" align="right"><b>총금액 : ${total } </b></td>
+		</tr>	
 	</table>
-	
+	<%
+		String id = (String)request.getAttribute("id");
+		Member member = new Member();
+		MemberDao md = MemberDao.getInstance();
+		member = md.select(id);
+	%>
 	<table border="1">
 		<tr>
 			<th colspan="2">주문자정보</th>
@@ -106,52 +85,31 @@
 	
 	<table border="1">
 		<tr>
-			<th colspan="2">배송지정보 
-			<label for="same"><font size="10">주문자와 정보가 동일합니다</font></label>
-			<input type="checkbox" id="same"></th>
+			<th colspan="2">배송지정보 </th>
 		</tr>
-		<%
-			String same = request.getParameter("same");
-			if(same != null) { %>				
-					<tr>
-						<td>성명</td>
-						<td><%=member.getName() %></td>
-					</tr>
-					<tr>
-						<td>전화번호</td>
-						<td><%=member.getTel() %></td>
-					</tr>
-					<tr>
-						<td>주소</td>
-						<td><%=member.getAddr() %></td>
-					</tr>
-				</table>
-		<%	} else{ %>
-		
+			
 		<tr>
 			<td>성명</td>
-			<td></td>
+			<td><input type="text" required="required"></td>
 		</tr>
 		<tr>
 			<td>전화번호</td>
-			<td></td>
+			<td><input type="tel" required="required"
+				pattern="\d{3}-\d{3,4}-\d{4}" placeholder="010-xxxx-xxxx"></td>
 		</tr>
 		<tr>
 			<td>주소</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>결제수단</td>
-			<td></td>
-		</tr>
-		<tr>
-			<th colspan="2" align="right"><input type="submit" value="결제" >
-											<input type="reset" value="다시입력">
-											<input type="button" onclick="fnClear()" value="주문취소">
-											</th>
+			<td><input type="text" required="required"></td>
 		</tr>
 	</table>
-	<%} %>
+		<table>				
+			<tr>
+				<th colspan="2" align="right"><input type="submit" value="결제" >
+											<input type="reset" value="다시입력">
+											<input type="button" onclick="fnClear()" value="주문취소">
+											</th>		
+			</tr>
+		</table>
 	</form>
 </body>
 </html>

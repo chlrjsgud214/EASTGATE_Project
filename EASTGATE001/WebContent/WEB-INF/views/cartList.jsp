@@ -21,6 +21,7 @@
 	function fnGo() {
 		location.href = "mmain.do";
 	}
+
 </script>
 </head>
 <body>
@@ -51,7 +52,8 @@
 </c:if>
 <c:if test="${not empty list }">
 	<h1>장바구니</h1>
-	<form action="ordersForm.do" method="post">
+<form action="ordersForm.do">
+
 		<table border="1">
 		<tr>
 			<th>상품명</th>
@@ -60,6 +62,7 @@
 			<th>금액</th>
 		</tr>
 	<c:forEach var="ct" items="${list }">
+	
 		<tr>
 			<td><img src="productimage/${ct.image }" width="100px" height="100px">${ct.pname }</td>
 			<td>${ct.price }</td>
@@ -77,7 +80,7 @@
 		
 		<tr>
 			<td colspan="5">
-				<input type='submit' value='주문하기' />
+				<input type='submit' value='주문하기'  />
 				<input type='button' value='쇼핑 계속하기' onclick='fnGo()' />
 				<input type='button' value='장바구니 비우기' onclick='fnClear()' />
 				</td>
