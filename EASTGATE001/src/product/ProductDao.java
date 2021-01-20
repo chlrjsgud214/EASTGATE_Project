@@ -173,6 +173,43 @@ public class ProductDao {
 			return c_list;
 		}
 		
+		public List<Product> name_list(String pname) {
+			List<Product> n_list = new ArrayList<Product>();
+			Connection conn = getConnection();
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			System.out.println("name_list.code : "+pname);
+			String sql =
+				"select * from product where pname like ? order by pname";
+			try {
+				pstmt = conn.prepareStatement(sql);	
+				pstmt.setString(1, '%'+pname+'%');
+				rs = pstmt.executeQuery();
+				System.out.println("Name_list : sql ok");
+				while (rs.next()) {
+					 Product pdt= new Product();
+		             pdt.setPcode(StringUtils.nvl(rs.getString("pcode"))); // 제품 번호
+		             pdt.setPid(StringUtils.nvl(rs.getString("pid"))); // 판매자 번호
+		             pdt.setPname(StringUtils.nvl(rs.getString("pname"))); // 제품이름
+		             pdt.setPrice(rs.getInt("price")); // 가격
+		             pdt.setPcount(rs.getInt("pcount")); // 재고수량
+		             pdt.setImage(StringUtils.nvl(rs.getString("image"))); // 썸네일
+		             pdt.setExplain(StringUtils.nvl(rs.getString("explain"))); // 제품설명
+		             
+		             n_list.add(pdt);
+				}
+			}catch (Exception e) {
+				System.out.println(e.getMessage());
+			}finally {
+				try {
+					if (rs != null) rs.close();
+					if (pstmt != null) pstmt.close();
+					if (conn != null) conn.close();
+				}catch (Exception e) {	}
+			}
+			return n_list;
+		}
+		
 		public ArrayList<Product> getProducts(String pcode){
 		
 			Connection conn = null;   

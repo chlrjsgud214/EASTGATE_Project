@@ -31,8 +31,8 @@
 						<li><a href="productlist.do">제품리스트 - 시연용</a></li>
 						<li><a href="logout.do">로그아웃</a></li>
 					</ul>
-					<form action="" class="search_form">
-						<input type="text" class="search_txt" placeholder="상품검색">
+					<form action="productNList.do" class="search_form" method="get">
+						<input type="text" class="search_txt" name="search_txt" placeholder="상품검색">
 						<input type="submit" value="검색">
 					</form>
 				</div>

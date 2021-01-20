@@ -48,7 +48,7 @@ td.fileupload{
 	<th>재고수량</th>
 	<th>설명</th></tr>
 <c:if test="${empty list }">
-	<tr><th colspan="5">데이터 없습니다</th></tr>
+	<tr><th colspan="7">검색된 상품이 없습니다</th></tr>
 </c:if>	
 <c:if test="${not empty list }">
 	<c:forEach var="pi" items="${list }">
