@@ -14,10 +14,10 @@ public class ProductCListAction implements CommandProcess {
 		System.out.println("들어옴");
 		ProductDao pis=ProductDao.getInstance();
 		String pcode = request.getParameter("pcode");
-		int sub = Integer.parseInt(request.getParameter("sub"));
+		int sub = pcode.length();
+		System.out.println(sub);
 		if(sub==0)sub=1;
 		String code = pcode.substring(0,sub);
-		System.out.println("code : "+code);
 		List<Product> list=pis.code_list(code);
 		
 		request.setAttribute("list", list);
