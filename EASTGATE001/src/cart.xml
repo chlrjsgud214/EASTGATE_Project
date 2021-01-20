@@ -8,8 +8,7 @@
 	<insert id="insert" parameterType="cart">
 		insert into cart values(#{pcode }, #{id }, #{pname }, #{image }, #{price }, #{ocount } )
 	</insert>
-	<delete id="delete" parameterType="cart">
+	<delete id="delete" >
 		delete from cart where id = #{id }
 	</delete>
-	<select id="select2" parameterType="string" resultType="list"></select>
 </mapper>

@@ -9,6 +9,9 @@ import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import org.apache.ibatis.io.Resources;
@@ -53,17 +56,22 @@ public class CartDao {
 	 * 
 	 * return (ArrayList<Cart>) session.selectList("carts.select", id); }
 	 */
-	public List<Cart> list() {
+	
+	
+	
+	public List<Cart> list(String id) {
 		List<Cart> list = new ArrayList<Cart>();
+		
+		String mid = id;
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql =
-			"select * from cart order by id desc";
+		String sql = "select * from cart where id = ? order by pcode desc";
 		try {
-			pstmt = conn.prepareStatement(sql);			
+			pstmt = conn.prepareStatement(sql);		
+			pstmt.setString(1, mid);
 			rs = pstmt.executeQuery();
-			while (rs.next()) {
+			while (rs.next()) {			
 				 Cart ct= new Cart();
 	             ct.setPcode(StringUtils.nvl(rs.getString("pcode"))); // 제품 번호
 	             ct.setId(StringUtils.nvl(rs.getString("id"))); // 구매자아이디
@@ -84,6 +92,7 @@ public class CartDao {
 		}
 		return list;
 	}
+	
 	private Connection getConnection() {
 		
 		Connection conn = null;

@@ -1,7 +1,10 @@
 package service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import cart.Cart;
 import cart.CartDao;
@@ -11,16 +14,19 @@ public class CartClearAction implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		int result = 0;
-		String id = request.getParameter("id");
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
 		CartDao cd = CartDao.getInstance();
-		Cart cart = cd.select(id);
-		if(cart != null) {
-			cart = new Cart();
+		List<Cart> list = cd.list(id);	
+		if(list != null) {		
 			result = cd.delete(id);
-		} else result = -1;
-		
-		request.setAttribute("result", result);
-		return "cartClear";
+			request.setAttribute("result", result);
+			return "cartClear";
+		} else {
+				result = -1;	
+				request.setAttribute("result", result);
+				return "cartClear";
+		}
 	}
 
 }

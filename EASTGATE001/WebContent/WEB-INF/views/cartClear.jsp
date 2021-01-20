@@ -11,7 +11,7 @@
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
 		alert("장바구니를 비웠습니다");
-		location.href="cartList.do";
+		location.href="cartInsert.do";
 	</script>
 	<c:if test="${result == 0 }">
 		<script type="text/javascript">

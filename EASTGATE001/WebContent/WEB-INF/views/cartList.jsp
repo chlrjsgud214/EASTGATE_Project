@@ -15,7 +15,7 @@
 <script type="text/javascript">
 	function fnClear() {
 		if(confirm("장바구니를 비우시겠습니까?")) {
-			location.href = "cartClear.jsp";
+			location.href = "cartClear.do";
 		}
 	}
 	function fnGo() {
@@ -41,14 +41,14 @@
 
 	
 	if(cartList.size() ==0) { 	%> --%>
-	<c:if test="${empty result }">
+<c:if test="${empty list }">
 	<h1>장바구니</h1>	
 	<table border="1">
 		<tr>
 			<td>장바구니에 담긴 상품이 없습니다. <a href="mmain.do">쇼핑계속하기</a></td>
 		</tr>
 	</table>
-	</c:if>
+</c:if>
 <c:if test="${not empty list }">
 	<h1>장바구니</h1>
 	<form action="ordersForm.do" method="post">
@@ -64,13 +64,15 @@
 			<td><img src="productimage/${ct.image }" width="100px" height="100px">${ct.pname }</td>
 			<td>${ct.price }</td>
 			<td>${ct.ocount }</td>	
-			<td>${ct.price * ct.ocount }</td>
-			
+			<c:set var="sum" value="${ct.price * ct.ocount }"/>
+			<td>${sum}</td>
+			<c:set var="total" value="${total + sum }"/>
 		</tr>		
+		
 	</c:forEach>
-</c:if>
+
 		<tr>
-			<td colspan="5" align="right"><b>총금액 : 0원 </b></td>
+			<td colspan="5" align="right"><b>총금액 : ${total }원 </b></td>
 		</tr>
 		
 		<tr>
@@ -82,6 +84,6 @@
 		</tr>		
 	</table>
 </form>
-
+</c:if>
 </body>
 </html>
